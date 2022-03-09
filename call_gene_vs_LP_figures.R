@@ -176,30 +176,27 @@ run_regression <- function(current_model_input, output_path, depot, day, sex_lab
   write_csv(as.data.frame(model_output_final), sprintf("%s/%s_%d_%s.csv", output_path, depot, day, sex_label))  
 }
 
-running_regression_commands <- function(output_path, curr_lp_data, gene_ensb_id){
+running_regression_commands <- function(output_path, curr_lp_data, gene_ensb_id, day){
   ### run regression commands
-  days <- c(0, 3, 8, 14)
   depots <- c("vc", "sc")
   sex_stratifications <- c(TRUE, FALSE) 
   gene_feature_output_path = sprintf("%s/gene_feature/", output_path)
-  day <- 0
-  depot <- "vc"
-  for (day in days){
-    for (depot in depots){
-      for (sex_stratified in sex_stratifications){
-        current_model_input<-subset(curr_lp_data, curr_lp_data$cellType == depot & curr_lp_data$Day == day)
-        if (sex_stratified){
-          current_model_input_male <- subset(current_model_input, current_model_input$sex == 1)
-          current_model_input_female <- subset(current_model_input, current_model_input$sex == 2)
-          run_regression(current_model_input_male, gene_feature_output_path, depot, day, "Male", gene_ensb_id)
-          run_regression(current_model_input_female, gene_feature_output_path, depot, day, "Female", gene_ensb_id)
-        }else{
-          # no sex stratification, use the current_model_input
-          run_regression(current_model_input, gene_feature_output_path, depot, day, "both_sex", gene_ensb_id)
-        }
+  dir.create(gene_feature_output_path)
+  for (depot in depots){
+    for (sex_stratified in sex_stratifications){
+      current_model_input<-subset(curr_lp_data, curr_lp_data$cellType == depot & curr_lp_data$Day == day)
+      if (sex_stratified){
+        current_model_input_male <- subset(current_model_input, current_model_input$sex == 1)
+        current_model_input_female <- subset(current_model_input, current_model_input$sex == 2)
+        run_regression(current_model_input_male, gene_feature_output_path, depot, day, "Male", gene_ensb_id)
+        run_regression(current_model_input_female, gene_feature_output_path, depot, day, "Female", gene_ensb_id)
+      }else{
+        # no sex stratification, use the current_model_input
+        run_regression(current_model_input, gene_feature_output_path, depot, day, "both_sex", gene_ensb_id)
       }
     }
-  }  
+  }
+
 }
 
 #### Pie chart ###
@@ -236,23 +233,23 @@ try_plot <- function(curr_plot_data, output_path, depot, day, sex_label){
   }
 }
 
-generate_pie_chart <- function(output_path){
-  days <- c(0, 3, 8, 14)
+generate_pie_chart <- function(output_path, day){
+
   depots <- c("vc", "sc")
   gene_feature_output_path = sprintf("%s/gene_feature/", output_path)
   gene_feature_piechart_output_path = sprintf("%s/pie_chart_qval/", output_path)
-  for (day in days){
-    for (depot in depots){
-      Male_data <- read.csv(sprintf("%s/%s_%d_%s.csv", gene_feature_output_path, depot, day, "Male"))
-      try_plot(Male_data, gene_feature_piechart_output_path, depot, day, "Male")
-      
-      Female_data <- read.csv(sprintf("%s/%s_%d_%s.csv", gene_feature_output_path, depot, day, "Female"))
-      try_plot(Female_data, gene_feature_piechart_output_path, depot, day, "Female")
-      
-      both_data <- read.csv(sprintf("%s/%s_%d_%s.csv", gene_feature_output_path, depot, day, "both_sex"))
-      try_plot(both_data, gene_feature_piechart_output_path, depot, day, "both_sex")
-    }
-  }  
+  dir.create(gene_feature_piechart_output_path)
+  for (depot in depots){
+    Male_data <- read.csv(sprintf("%s/%s_%d_%s.csv", gene_feature_output_path, depot, day, "Male"))
+    try_plot(Male_data, gene_feature_piechart_output_path, depot, day, "Male")
+    
+    Female_data <- read.csv(sprintf("%s/%s_%d_%s.csv", gene_feature_output_path, depot, day, "Female"))
+    try_plot(Female_data, gene_feature_piechart_output_path, depot, day, "Female")
+    
+    both_data <- read.csv(sprintf("%s/%s_%d_%s.csv", gene_feature_output_path, depot, day, "both_sex"))
+    try_plot(both_data, gene_feature_piechart_output_path, depot, day, "both_sex")
+  }
+
 }  
 
 #### heatmap plots ####
@@ -303,27 +300,86 @@ try_heatmap <- function(curr_data, curr_data_output_path){
   }  
 }
 
-generate_heatmap_plots <- function(output_path){
-  days <- c(0, 3, 8, 14)
+generate_heatmap_plots <- function(output_path, day){
   depots <- c("vc", "sc")
   gene_feature_input_path = sprintf("%s/gene_feature/", output_path)
   gene_feature_output_path = sprintf("%s/heatmaps_qval/", output_path)
-  for (day in days){
-    for (depot in depots){
-      # Male
-      curr_data <- read.csv(sprintf("%s/%s_%d_%s.csv", gene_feature_input_path, depot, day, "Male"))
-      curr_data_output_path <- sprintf("%s/%s_%d_%s.pdf", gene_feature_output_path, depot, day, "Male")
-      try_heatmap(curr_data, curr_data_output_path)
-      
-      
-      curr_data <- read.csv(sprintf("%s/%s_%d_%s.csv", gene_feature_input_path, depot, day, "Female"))
-      curr_data_output_path <- sprintf("%s/%s_%d_%s.pdf", gene_feature_output_path, depot, day, "Female")
-      try_heatmap(curr_data, curr_data_output_path)
-      
-      curr_data <- read.csv(sprintf("%s/%s_%d_%s.csv", gene_feature_input_path, depot, day, "both_sex"))
-      curr_data_output_path <- sprintf("%s/%s_%d_%s.pdf", gene_feature_output_path, depot, day, "both_sex")
-      try_heatmap(curr_data, curr_data_output_path)
-    }
+  dir.create(gene_feature_output_path)
+  depot <- "sc"
+  for (depot in depots){
+    # Male
+    curr_data <- read.csv(sprintf("%s/%s_%d_%s.csv", gene_feature_input_path, depot, day, "Male"))
+    curr_data_output_path <- sprintf("%s/%s_%d_%s.pdf", gene_feature_output_path, depot, day, "Male")
+    try_heatmap(curr_data, curr_data_output_path)
+    
+    
+    curr_data <- read.csv(sprintf("%s/%s_%d_%s.csv", gene_feature_input_path, depot, day, "Female"))
+    curr_data_output_path <- sprintf("%s/%s_%d_%s.pdf", gene_feature_output_path, depot, day, "Female")
+    try_heatmap(curr_data, curr_data_output_path)
+    
+    curr_data <- read.csv(sprintf("%s/%s_%d_%s.csv", gene_feature_input_path, depot, day, "both_sex"))
+    curr_data_output_path <- sprintf("%s/%s_%d_%s.pdf", gene_feature_output_path, depot, day, "both_sex")
+    try_heatmap(curr_data, curr_data_output_path)
+  }
+
+}
+
+
+try_volcano <- function(curr_data, curr_data_output_path, volcano_title){
+  if (dim(curr_data)[1] < 10){
+    return()
+  }
+  th <- .05
+  lower_fdr_variable <- sprintf("qvalue>=%.02f", th)
+  higher_fdr_variable <- sprintf("qvalue<%.02f", th)
+  signif_variable <- sprintf("qvalue<%.02f, beta>.5", th)
+  new_colors <- c("blue", "blue4", "red")
+  names(new_colors) <- c(lower_fdr_variable, higher_fdr_variable, signif_variable)
+  
+  curr_data$ColorCode <- lower_fdr_variable  # every one gets low fdr color
+  curr_data$ColorCode[curr_data$q_value <= th] <- higher_fdr_variable  # the onese with good fdr get a color
+  curr_data$ColorCode[abs(curr_data$beta) > 0.5 & curr_data$q_value <= th] <- signif_variable  # significant ones
+ 
+  p <- ggplot(data=curr_data, aes(x=beta, y=-log10(q_value), col=ColorCode)) + geom_point() +
+    theme_minimal() + 
+    scale_colour_manual(values = new_colors)+
+    labs(title=sprintf("%s", volcano_title), 
+         x ="beta", y = "-log10(qvalue)") + 
+    theme(
+      plot.title = element_text(size=20, face="bold"),
+      axis.title.x = element_text(size=20, face="bold"),
+      axis.title.y = element_text(size=20, face="bold"),
+      axis.text = element_text(size = 18),
+      # legend.position = "none",
+      plot.background = element_rect(fill = "white")
+    )
+  p
+  ggsave(curr_data_output_path)
+}
+
+generate_volcano_chart <- function(output_path, day){
+  depots <- c("vc", "sc")
+  gene_feature_input_path = sprintf("%s/gene_feature/", output_path)
+  gene_feature_output_path = sprintf("%s/volcano_qval/", output_path)
+  dir.create(gene_feature_output_path)
+  depot <- "sc"
+  for (depot in depots){
+    # Male
+    curr_data <- read.csv(sprintf("%s/%s_%d_%s.csv", gene_feature_input_path, depot, day, "Male"))
+    curr_data_output_path <- sprintf("%s/%s_%d_%s.pdf", gene_feature_output_path, depot, day, "Male")
+    volcano_title <- sprintf("features %s;%s;%s", depot, day, "Male")
+    try_volcano(curr_data, curr_data_output_path, volcano_title)
+    
+    
+    curr_data <- read.csv(sprintf("%s/%s_%d_%s.csv", gene_feature_input_path, depot, day, "Female"))
+    curr_data_output_path <- sprintf("%s/%s_%d_%s.pdf", gene_feature_output_path, depot, day, "Female")
+    volcano_title <- sprintf("features %s;%s;%s", depot, day, "Female")
+    try_volcano(curr_data, curr_data_output_path, volcano_title)
+    
+    curr_data <- read.csv(sprintf("%s/%s_%d_%s.csv", gene_feature_input_path, depot, day, "both_sex"))
+    curr_data_output_path <- sprintf("%s/%s_%d_%s.pdf", gene_feature_output_path, depot, day, "both_sex")
+    volcano_title <- sprintf("features %s;%s;%s", depot, day, "both_sex")
+    try_volcano(curr_data, curr_data_output_path, volcano_title)
   }  
 }
 
@@ -334,29 +390,26 @@ args = commandArgs(trailingOnly=TRUE)
 LP_data_path <- args[1]
 gene_ensb_id <- args[2]
 gene_name <- args[3]
-
+day <- as.numeric(args[4])
 output_path <- "LP_output"
-
+dir.create(output_path)
 
 data<-read.csv(file=LP_data_path)
 
 # plotting expressions
-run_on_a_gene_for_plotting_expressions(data, output_path, gene_name, gene_ensb_id)
+if (day == 0){
+  run_on_a_gene_for_plotting_expressions(data, output_path, gene_name, gene_ensb_id)  
+}
 
 # running regression models
 curr_lp_data <- prepare_data_for_expression_imaging(data, gene_ensb_id)
-running_regression_commands(output_path, curr_lp_data, gene_ensb_id)
+running_regression_commands(output_path, curr_lp_data, gene_ensb_id, day)
 
 # generating heatmap
-generate_heatmap_plots(output_path)
+generate_heatmap_plots(output_path, day)
 
 # genrate piechart
-generate_pie_chart(output_path)
+generate_pie_chart(output_path, day)
 
-
-
-
-
-
-
-
+# generate volcano plot
+generate_volcano_chart(output_path, day)

@@ -1,16 +1,11 @@
 
-devtools::install_github("cardiomoon/webr")
-
 library(dplyr)
 library(ggplot2)
 library(lme4)
 library(rlang)
 library(qvalue)
 library(readr)
-library(moonBook)  # ?
-library(webr)
 library(ComplexHeatmap)
-library(circlize)
 library(vcfR)
 library(ggsignif)
 library(ggpubr)
@@ -393,6 +388,11 @@ gene_name <- args[3]
 day <- as.numeric(args[4])
 output_path <- "LP_output"
 dir.create(output_path)
+
+LP_data_path <- "/Users/hesam/Desktop/lp_lookup/codes/data/AP_RNA_alldata_0510.csv"
+gene_ensb_id <- "ENSG00000119681"
+gene_name <- "LTBP2"
+day <- as.numeric("14")
 
 data<-read.csv(file=LP_data_path)
 

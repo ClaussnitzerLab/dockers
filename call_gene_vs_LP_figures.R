@@ -10,7 +10,6 @@ library(vcfR)
 library(ggsignif)
 library(ggpubr)
 library(stringr)
-library(rstatix)  # 
 rm(list = ls())
 
 ### plot gene expressions

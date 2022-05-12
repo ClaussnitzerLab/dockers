@@ -53,7 +53,7 @@ plot_expressions <- function(plot_data, depot, ffa_tag, output_path){
   ggsave(figure_path)
 }
 
-# plotting gene expressions across differentiation time points
+# preparing data for plotting gene expressions across differentiation time points
 plotting_expression_vs_timepoints <- function(data, output_path, gene_name, gene_ensb_id){
   curr_gene_expression_data <- select(data, c("batch", "newcol", "patientID", "sex", "age", "BMI", "T2D", "FFA", "cellType", "Day", gene_ensb_id))
   for (cellType in c("vc", "sc")){
@@ -85,8 +85,8 @@ update_regression_arrays <- function(current_model_input, outcome, exposure, sex
   current_model_input$batch <- as.factor(current_model_input$batch)
   current_model_input$expression <- current_model_input$expression + .001
   current_model_input <- na.omit(current_model_input)
-  
-  formula <- sprintf("get(outcome) ~ log(get(exposure)) + age")
+
+  formula <- sprintf("get('%s') ~ log(get(exposure)) + age", outcome)
   if (sex_label == "both_sex"){
     if (length(unique(current_model_input$sex)) > 1){
       formula <- sprintf("%s + sex", formula)
@@ -337,7 +337,6 @@ args = commandArgs(trailingOnly=TRUE)
 LP_data_path <- args[1]
 gene_ensb_id <- args[2]
 gene_name <- args[3]
-day <- as.numeric(args[4])
 output_path <- "LP_output"
 dir.create(output_path)
 
@@ -455,8 +454,3 @@ for (day in days){
     }
   }
 }
-
-
-
-
-

@@ -86,7 +86,7 @@ update_regression_arrays <- function(current_model_input, outcome, exposure, sex
   current_model_input$expression <- current_model_input$expression + .001
   current_model_input <- na.omit(current_model_input)
 
-  formula <- sprintf("get('%s') ~ log(get(exposure)) + age", outcome)
+  formula <- sprintf("get('%s') ~ log(get('%s')) + age", outcome, exposure)
   if (sex_label == "both_sex"){
     if (length(unique(current_model_input$sex)) > 1){
       formula <- sprintf("%s + sex", formula)

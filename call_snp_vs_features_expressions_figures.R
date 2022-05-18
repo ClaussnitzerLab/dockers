@@ -590,7 +590,7 @@ snp_codes_00 <- arg[7]
 snp_codes_11 <- arg[8]
 
 root_output <- "LP_output"
-dir.create(output_path)
+dir.create(root_output)
 
 data<-read.csv(LP_data_path)
 

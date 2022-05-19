@@ -584,10 +584,10 @@ LP_data_path <- args[1]
 input_vcf_file <- args[2]
 gene_name <- args[3]
 snp_name <-  args[4]
-gene_ensb_id <- arg[5]
-snp_coordinate <- arg[6]
-snp_codes_00 <- arg[7]
-snp_codes_11 <- arg[8]
+gene_ensb_id <- args[5]
+snp_coordinate <- args[6]
+snp_codes_00 <- args[7]
+snp_codes_11 <- args[8]
 
 root_output <- "LP_output"
 dir.create(root_output)

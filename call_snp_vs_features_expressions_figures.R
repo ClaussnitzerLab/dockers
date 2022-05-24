@@ -1,5 +1,5 @@
 
-library(vcfR)
+# library(vcfR)
 library(sjstats)
 library(cowplot)
 library(dplyr)
@@ -12,19 +12,19 @@ library(stringr)
 rm(list = ls())
 
 # load vcf file
-get_allele <- function(input_vcf_file){
-  loaded_vcf <- tryCatch(
-    {
-      vcf <- read.vcfR( input_vcf_file, verbose = FALSE )
-      allel <- as.data.frame(vcfR2loci(vcf))
-      return(TRUE)    
-    },error=function(cond) {
-      writeLines(sprintf("%s failed", input_vcf_file))
-      return(FALSE)    
-    }
-  )
-  return(loaded_vcf)
-}
+#get_allele <- function(input_vcf_file){
+#  loaded_vcf <- tryCatch(
+#    {
+#      vcf <- read.vcfR( input_vcf_file, verbose = FALSE )
+#      allel <- as.data.frame(vcfR2loci(vcf))
+#      return(TRUE)    
+#    },error=function(cond) {
+#      writeLines(sprintf("%s failed", input_vcf_file))
+#      return(FALSE)    
+#    }
+#  )
+#  return(loaded_vcf)
+#}
 
 # a sub-function for the regression function. This generates a row of the output table
 update_regression_arrays <- function(current_model_input, outcome, sex_label){
@@ -613,15 +613,22 @@ SimpGroup1 <- c(simple_group01, simple_group11, simple_group01)
 not_combined_group_definitions <- data.frame(Group0, Group1, SimpGroup0, SimpGroup1)
 
 
+vcf <- read.csv(input_vcf_file)
+rownames(vcf) <- vcf$IDs
+allel <- vcf # as.data.frame(vcfR2loci(vcf))
+dir.create(file.path(sprintf("%s/figures", output_path)))
+dir.create(file.path(sprintf("%s/tables", output_path)))
+run_analsys(gene_name, gene_ensb_id, snp_name, allel, output_path, snp_coordinate, snp_codes_00, snp_codes_11)
+run_eqtl_analysis(gene_name, gene_ensb_id, snp_name, allel, output_path, snp_coordinate, snp_codes_00, snp_codes_11)
 
-loaded_vcf <- get_allele(input_vcf_file)
-if (loaded_vcf){
-  vcf <- read.vcfR(input_vcf_file, verbose = FALSE )
-  allel <- as.data.frame(vcfR2loci(vcf))
-  dir.create(file.path(sprintf("%s/figures", output_path)))
-  dir.create(file.path(sprintf("%s/tables", output_path)))
-  run_analsys(gene_name, gene_ensb_id, snp_name, allel, output_path, snp_coordinate, snp_codes_00, snp_codes_11)
-  run_eqtl_analysis(gene_name, gene_ensb_id, snp_name, allel, output_path, snp_coordinate, snp_codes_00, snp_codes_11)
-}
+#loaded_vcf <- get_allele(input_vcf_file)
+#if (loaded_vcf){
+#  vcf <- read.vcfR(input_vcf_file, verbose = FALSE )
+#  allel <- as.data.frame(vcfR2loci(vcf))
+#  dir.create(file.path(sprintf("%s/figures", output_path)))
+#  dir.create(file.path(sprintf("%s/tables", output_path)))
+#  run_analsys(gene_name, gene_ensb_id, snp_name, allel, output_path, snp_coordinate, snp_codes_00, snp_codes_11)
+#  run_eqtl_analysis(gene_name, gene_ensb_id, snp_name, allel, output_path, snp_coordinate, snp_codes_00, snp_codes_11)
+#}
 
 

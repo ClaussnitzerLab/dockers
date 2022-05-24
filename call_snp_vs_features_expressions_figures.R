@@ -615,6 +615,7 @@ not_combined_group_definitions <- data.frame(Group0, Group1, SimpGroup0, SimpGro
 
 vcf <- read.csv(input_vcf_file)
 rownames(vcf) <- vcf$IDs
+colnames(vcf) <- c(snp_coordinate, "IDs")
 allel <- vcf # as.data.frame(vcfR2loci(vcf))
 dir.create(file.path(sprintf("%s/figures", output_path)))
 dir.create(file.path(sprintf("%s/tables", output_path)))

@@ -63,7 +63,7 @@ run_regression <- function(curr_data, group_class1, group_class2, sex_label){
   colnames(output_df) <- c("variable", "coeff", "pvalue")
   if (dim(case)[1] > 1 & dim(control)[1] > 1){
     data_anov<-rbind(case, control)
-    data_anov$genotype<-factor(data_anov$genotype, levels= c(group_class1, group_class2))
+    #data_anov$genotype<-factor(data_anov$genotype, levels= c(group_class1, group_class2))
     imaging_data <- select(data_anov, -c("batch", "newcol", "patientID", "sex", "age", "BMI", "T2D", "FFA", "cellType", "Day", "expression", "genotype"))
     for (outcome in colnames(imaging_data)){
       output <- update_regression_arrays(data_anov, outcome, sex_label)

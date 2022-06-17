@@ -387,7 +387,7 @@ run_on_a_set <- function(curr_data, output_path, depot, day, sex_option, FFA_tag
 # 
 run_analsys <- function(gene_name, gene_ensb_id, snp_name, allel, output_path, snp_coordinate, snp_codes_00, snp_codes_11){
   allel["ID"] <- rownames(allel)
-  names(allel)[names(allel) == snp_coordinate] <- "genotype"
+  # names(allel)[names(allel) == snp_coordinate] <- "genotype"
   l <- merge(data, allel, by.x = "patientID", by.y = "ID")
   l["expression"] <- l[gene_ensb_id]
   summary(l["expression"])
@@ -532,7 +532,7 @@ plot_eqtl <- function(curr_data, output_path, depot, day, sex_option, FFA_tag, s
 
 run_eqtl_analysis <- function(gene_name, gene_ensb_id, snp_name, allel, output_path, snp_coordinate, snp_codes_00, snp_codes_11){
   allel["ID"] <- rownames(allel)
-  names(allel)[names(allel) == snp_coordinate] <- "genotype"
+  # names(allel)[names(allel) == snp_coordinate] <- "genotype"
   l <- merge(data, allel, by.x = "patientID", by.y = "ID")
   l["expression"] <- l[gene_ensb_id]
   

@@ -115,7 +115,6 @@ update_regression_arrays <- function(current_model_input, outcome, exposure, sex
 # running the lm function
 run_regression <- function(current_model_input, output_path, depot, day, sex_label, FFA_tag, gene_ensb_id){
   imaging_data <- select(current_model_input, -c("batch", "newcol", "patientID", "sex", "age", "BMI", "T2D", "FFA", "cellType", "Day", "expression"))
-  outcome <- "Cells_Children_LargeBODIPYObjects_Count"
   output_df <- data.frame(matrix(ncol = 3, nrow = 0))
   colnames(output_df) <- c("variable", "coeff", "pvalue")
   for (outcome in colnames(imaging_data)){
@@ -269,6 +268,8 @@ MyPieDonut <- function(results_df, in_title, file_name) {
   #####slices_small is the dataframe that will be used to make the inner pie plot.
   #Make a table counting the number of features for each color (Mito, AGP, Lipid, DNA, Other).
   slices_small <- results_df %>% group_by(feature_color) %>% summarise(feature_number = n())
+  #Change all NA to zero.
+  slices_small[is.na(slices_small)] <- 0
   #Name the columns of the data frame.
   colnames(slices_small) <- c("color", "value")
   #Add a column with the percent of features for each color.
@@ -283,6 +284,8 @@ MyPieDonut <- function(results_df, in_title, file_name) {
       slices_small[w,"labels"] <- ""
     }
   }
+  #Garantees missing dyes do not compromise 
+  color <- color[color %in% slices_small$color]
   #Reorder the rows of the dataframe so that the labels are centered in the correct slice. Without this, the labels may not be positioned correctly depending on the relative size of the slices.
   slices_small <- slices_small[match(color, slices_small$color),]
   

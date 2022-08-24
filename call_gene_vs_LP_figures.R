@@ -95,9 +95,9 @@ update_regression_arrays <- function(current_model_input, outcome, exposure, sex
   if (length(unique(current_model_input$BMI)) > 1){
     formula <- sprintf("%s + BMI", formula)
   }
-  if (length(unique(current_model_input$T2D)) > 1){
-    formula <- sprintf("%s + T2D", formula)
-  }
+  #if (length(unique(current_model_input$T2D)) > 1){
+  #  formula <- sprintf("%s + T2D", formula)
+  #}
   if (length(unique(current_model_input$batch)) > 1){
     formula <- sprintf("%s + batch", formula)
   } 

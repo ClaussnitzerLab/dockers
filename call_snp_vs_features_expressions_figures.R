@@ -1,5 +1,4 @@
 
-# library(vcfR)
 library(sjstats)
 library(cowplot)
 library(dplyr)
@@ -11,22 +10,6 @@ library(stringr)
 
 rm(list = ls())
 
-# load vcf file
-#get_allele <- function(input_vcf_file){
-#  loaded_vcf <- tryCatch(
-#    {
-#      vcf <- read.vcfR( input_vcf_file, verbose = FALSE )
-#      allel <- as.data.frame(vcfR2loci(vcf))
-#      return(TRUE)    
-#    },error=function(cond) {
-#      writeLines(sprintf("%s failed", input_vcf_file))
-#      return(FALSE)    
-#    }
-#  )
-#  return(loaded_vcf)
-#}
-
-# a sub-function for the regression function. This generates a row of the output table
 update_regression_arrays <- function(current_model_input, outcome, sex_label){
   current_model_input$sex <- as.factor(current_model_input$sex)
   current_model_input$T2D <- as.factor(current_model_input$T2D)
@@ -40,9 +23,6 @@ update_regression_arrays <- function(current_model_input, outcome, sex_label){
   }
   if (length(unique(current_model_input$BMI)) > 1){
     formula <- sprintf("%s + BMI", formula)
-  }
-  if (length(unique(current_model_input$T2D)) > 1){
-    formula <- sprintf("%s + T2D", formula)
   }
   if (length(unique(current_model_input$batch)) > 1){
     formula <- sprintf("%s + batch", formula)
@@ -366,29 +346,28 @@ run_on_a_set <- function(curr_data, output_path, depot, day, sex_option, FFA_tag
     }
   }
   
-  combined_alleles <- curr_data
-  combined_alleles["genotype"] <- ifelse(combined_alleles$genotype == group00, group01, combined_alleles$genotype)
+  combined_allelees <- curr_data
+  combined_allelees["genotype"] <- ifelse(combined_allelees$genotype == group00, group01, combined_allelees$genotype)
   header <- sprintf("combined_%s_%s", simple_group00, simple_group01)
-  features <- run_regression(combined_alleles, group01, group11, sex_option)
+  features <- run_regression(combined_allelees, group01, group11, sex_option)
   if(dim(features)[1] > 0){
     generate_results(features, output_path, depot, day, sex_option, FFA_tag, sprintf("combined_%s_%s", simple_group00, simple_group01), simple_group11, header)
   }
   
   
-  combined_alleles <- curr_data
-  combined_alleles["genotype"] <- ifelse(combined_alleles$genotype == group11, group01, combined_alleles$genotype)
+  combined_allelees <- curr_data
+  combined_allelees["genotype"] <- ifelse(combined_allelees$genotype == group11, group01, combined_allelees$genotype)
   header <- sprintf("combined_%s_%s", simple_group11, simple_group01)
-  features <- run_regression(combined_alleles, group01, group00, sex_option)
+  features <- run_regression(combined_allelees, group01, group00, sex_option)
   if(dim(features)[1] > 0){
     generate_results(features, output_path, depot, day, sex_option, FFA_tag, sprintf("combined_%s_%s", simple_group11, simple_group01), simple_group00, header)
   }
 }
 
 # 
-run_analsys <- function(gene_name, gene_ensb_id, snp_name, allel, output_path, snp_coordinate, snp_codes_00, snp_codes_11){
-  allel["ID"] <- rownames(allel)
-  # names(allel)[names(allel) == snp_coordinate] <- "genotype"
-  l <- merge(data, allel, by.x = "patientID", by.y = "ID")
+run_analsys <- function(gene_name, gene_ensb_id, snp_name, allele, output_path, snp_coordinate, snp_codes_00, snp_codes_11){
+  allele["ID"] <- rownames(allele)
+  l <- merge(data, allele, by.x = "patientID", by.y = "ID")
   l["expression"] <- l[gene_ensb_id]
   summary(l["expression"])
   
@@ -427,7 +406,7 @@ run_analsys <- function(gene_name, gene_ensb_id, snp_name, allel, output_path, s
   curr_lp_data$sex <- ifelse(curr_lp_data$sex == 1, "Female", "Male")
   output_table <- as.data.frame(t(rbind(ll0, ll1, ll2)))
   
-  write.csv(output_table, sprintf("%s/allel_info_imaging.csv", output_path))
+  write.csv(output_table, sprintf("%s/allele_info_imaging.csv", output_path))
   write.csv(curr_lp_data, sprintf("%s/genotyping_data_imaging.csv", output_path))  
   
   days <- c(0, 3, 8, 14)
@@ -464,7 +443,7 @@ run_analsys <- function(gene_name, gene_ensb_id, snp_name, allel, output_path, s
   }
 }
 
-plot_expression_per_allele <- function(curr_plot_data, snp_name, image_title, image_path){
+plot_expression_per_allelee <- function(curr_plot_data, snp_name, image_title, image_path){
   curr_plot_data["genotype"] <- as.factor(curr_plot_data$genotype)
   summary(as.factor(curr_plot_data$genotype))
   base <- max(curr_plot_data$expression)
@@ -498,42 +477,42 @@ plot_eqtl <- function(curr_data, output_path, depot, day, sex_option, FFA_tag, s
   if (length(unique(curr_temp$genotype )) >= 2){
     image_title <- sprintf("%s;%s;%s;%s", depot, day, sex_option, FFA_tag)
     image_path <- sprintf("%s/figures/%s_%s_%s_%s.pdf", output_path, depot, day, sex_option, FFA_tag)
-    plot_expression_per_allele(curr_data, snp_name, image_title, image_path)
+    plot_expression_per_allelee(curr_data, snp_name, image_title, image_path)
   }
   
-  #### combining minor allele and heter
+  #### combining minor allelee and heter
   major <- sprintf("%s/%s", snp_codes_00, snp_codes_00)
   minor <- sprintf("%s/%s", snp_codes_11, snp_codes_11)
   heter <- sprintf("%s/%s", snp_codes_00, snp_codes_11)
   
-  combined_alleles <- curr_data
-  combined_alleles["genotype"] <- ifelse(combined_alleles$genotype == minor, heter, combined_alleles$genotype)
+  combined_allelees <- curr_data
+  combined_allelees["genotype"] <- ifelse(combined_allelees$genotype == minor, heter, combined_allelees$genotype)
   header <- sprintf("%s merged with %s", minor, heter)
-  if (length(unique(combined_alleles$genotype )) >= 2){
+  if (length(unique(combined_allelees$genotype )) >= 2){
     image_title <- sprintf("%s;%s;%s;%s;%s", depot, day, sex_option, FFA_tag, header)
     
     image_path <- sprintf("%s/figures/%s_%s_%s_%s_%s.pdf", output_path, depot, day, sex_option, FFA_tag, sprintf("combined_%s_%s", 
                                                                                                                  str_replace(minor, "/", ""), 
                                                                                                                  str_replace(heter, "/", "")))
-    plot_expression_per_allele(combined_alleles, snp_name, image_title, image_path)
+    plot_expression_per_allelee(combined_allelees, snp_name, image_title, image_path)
   }
   
-  combined_alleles <- curr_data
-  combined_alleles["genotype"] <- ifelse(combined_alleles$genotype == major, heter, combined_alleles$genotype)
+  combined_allelees <- curr_data
+  combined_allelees["genotype"] <- ifelse(combined_allelees$genotype == major, heter, combined_allelees$genotype)
   header <- sprintf("%s merged with %s", major, heter)
-  if (length(unique(combined_alleles$genotype )) >= 2){
+  if (length(unique(combined_allelees$genotype )) >= 2){
     image_title <- sprintf("%s;%s;%s;%s;%s", depot, day, sex_option, FFA_tag, header)
     image_path <- sprintf("%s/figures/%s_%s_%s_%s_%s.pdf", output_path, depot, day, sex_option, FFA_tag, sprintf("combined_%s_%s", 
                                                                                                                  str_replace(major, "/", ""), 
                                                                                                                  str_replace(heter, "/", "")))
-    plot_expression_per_allele(combined_alleles, snp_name, image_title, image_path)
+    plot_expression_per_allelee(combined_allelees, snp_name, image_title, image_path)
   }
 }
 
-run_eqtl_analysis <- function(gene_name, gene_ensb_id, snp_name, allel, output_path, snp_coordinate, snp_codes_00, snp_codes_11){
-  allel["ID"] <- rownames(allel)
-  # names(allel)[names(allel) == snp_coordinate] <- "genotype"
-  l <- merge(data, allel, by.x = "patientID", by.y = "ID")
+run_eqtl_analysis <- function(gene_name, gene_ensb_id, snp_name, allele, output_path, snp_coordinate, snp_codes_00, snp_codes_11){
+  allele["ID"] <- rownames(allele)
+  # names(allele)[names(allele) == snp_coordinate] <- "genotype"
+  l <- merge(data, allele, by.x = "patientID", by.y = "ID")
   l["expression"] <- l[gene_ensb_id]
   
   ll0 <- snp_coordinate
@@ -548,7 +527,7 @@ run_eqtl_analysis <- function(gene_name, gene_ensb_id, snp_name, allel, output_p
   curr_genotype_data$sex <- ifelse(curr_genotype_data$sex == 1, "Female", "Male")
   output_table <- as.data.frame(t(rbind(ll0, ll1, ll2)))
   
-  write.csv(output_table, sprintf("%s/allel_info.csv", output_path))
+  write.csv(output_table, sprintf("%s/allele_info.csv", output_path))
   write.csv(curr_genotype_data, sprintf("%s/genotyping_data.csv", output_path))
   
   days <- c(0, 3, 8, 14)
@@ -578,7 +557,6 @@ run_eqtl_analysis <- function(gene_name, gene_ensb_id, snp_name, allel, output_p
   }
 }
 
-
 args = commandArgs(trailingOnly=TRUE)
 LP_data_path <- args[1]
 input_vcf_file <- args[2]
@@ -595,7 +573,6 @@ dir.create(root_output)
 data<-read.csv(LP_data_path)
 
 output_path <- sprintf("%s/snp_features_%s", root_output, snp_name)
-dir.create(root_output)
 dir.create(file.path(output_path))
 
 group00 <- sprintf("%s/%s", snp_codes_00, snp_codes_00)
@@ -615,21 +592,8 @@ not_combined_group_definitions <- data.frame(Group0, Group1, SimpGroup0, SimpGro
 
 vcf <- read.csv(input_vcf_file)
 rownames(vcf) <- vcf$IDs
-#colnames(vcf) <- c(snp_coordinate, "IDs")
-allel <- vcf # as.data.frame(vcfR2loci(vcf))
+allele <- vcf # as.data.frame(vcfR2loci(vcf))
 dir.create(file.path(sprintf("%s/figures", output_path)))
 dir.create(file.path(sprintf("%s/tables", output_path)))
-run_analsys(gene_name, gene_ensb_id, snp_name, allel, output_path, snp_coordinate, snp_codes_00, snp_codes_11)
-run_eqtl_analysis(gene_name, gene_ensb_id, snp_name, allel, output_path, snp_coordinate, snp_codes_00, snp_codes_11)
-
-#loaded_vcf <- get_allele(input_vcf_file)
-#if (loaded_vcf){
-#  vcf <- read.vcfR(input_vcf_file, verbose = FALSE )
-#  allel <- as.data.frame(vcfR2loci(vcf))
-#  dir.create(file.path(sprintf("%s/figures", output_path)))
-#  dir.create(file.path(sprintf("%s/tables", output_path)))
-#  run_analsys(gene_name, gene_ensb_id, snp_name, allel, output_path, snp_coordinate, snp_codes_00, snp_codes_11)
-#  run_eqtl_analysis(gene_name, gene_ensb_id, snp_name, allel, output_path, snp_coordinate, snp_codes_00, snp_codes_11)
-#}
-
-
+run_analsys(gene_name, gene_ensb_id, snp_name, allele, output_path, snp_coordinate, snp_codes_00, snp_codes_11)
+run_eqtl_analysis(gene_name, gene_ensb_id, snp_name, allele, output_path, snp_coordinate, snp_codes_00, snp_codes_11)

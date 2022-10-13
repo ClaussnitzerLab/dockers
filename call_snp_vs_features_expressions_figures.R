@@ -16,7 +16,7 @@ update_regression_arrays <- function(current_model_input, outcome, sex_label){
   current_model_input$batch <- as.factor(current_model_input$batch)
   current_model_input <- na.omit(current_model_input)
   formula <- sprintf("get('%s') ~ genotype + age", outcome)
-  if (sex_label == "both_sex"){
+  if (sex_label == "both"){  #Changed here
     if (length(unique(current_model_input$sex)) > 1){
       formula <- sprintf("%s + sex", formula)
     }        
@@ -81,11 +81,11 @@ run_regression <- function(curr_data, group_class1, group_class2, sex_label){
 plot_volcano <- function(volcano, image_path, image_title){
   ####define color categories###
   volcano <- volcano %>% dplyr::mutate(feature_color = 
-                                         ifelse(grepl("BODIPY", rownames(volcano)),'Lipid', 
-                                                ifelse(grepl("AGP", rownames(volcano)),'AGP', 
-                                                       ifelse(grepl("Mito", rownames(volcano)),'Mito',
-                                                              ifelse(grepl("DNA", rownames(volcano)),'DNA',
-                                                                     'other')))))
+                                          ifelse(grepl("BODIPY", variable),'Lipid', 
+                                                  ifelse(grepl("AGP", variable),'AGP', 
+                                                         ifelse(grepl("Mito", variable),'Mito',
+                                                                ifelse(grepl("DNA", variable),'DNA',
+                                                                       'other')))))
   volcano$feature_color<-factor(volcano$feature_color, levels = c("Mito","AGP","Lipid","DNA", "other"))
   ####remove missing values###
   volcano<- volcano[complete.cases(volcano), ]
@@ -240,6 +240,8 @@ MyPieDonut <- function(results_df, in_title, file_name) {
   #####slices_small is the dataframe that will be used to make the inner pie plot.
   #Make a table counting the number of features for each color (Mito, AGP, Lipid, DNA, Other).
   slices_small <- results_df %>% group_by(feature_color) %>% summarise(feature_number = n())
+  #Change all NA to zero.                             
+  slices_small[is.na(slices_small)] <- 0              
   #Name the columns of the data frame.
   colnames(slices_small) <- c("color", "value")
   #Add a column with the percent of features for each color.
@@ -254,6 +256,8 @@ MyPieDonut <- function(results_df, in_title, file_name) {
       slices_small[w,"labels"] <- ""
     }
   }
+  #Garantees missing dyes do not compromise                        
+  color <- color[color %in% slices_small$color]       
   #Reorder the rows of the dataframe so that the labels are centered in the correct slice. Without this, the labels may not be positioned correctly depending on the relative size of the slices.
   slices_small <- slices_small[match(color, slices_small$color),]
   
@@ -406,7 +410,7 @@ run_analsys <- function(gene_name, gene_ensb_id, snp_name, allele, output_path, 
   curr_lp_data$sex <- ifelse(curr_lp_data$sex == 1, "Female", "Male")
   output_table <- as.data.frame(t(rbind(ll0, ll1, ll2)))
   
-  write.csv(output_table, sprintf("%s/allele_info_imaging.csv", output_path))
+  write.csv(output_table, sprintf("%s/allele_info_imaging.csv", output_path), row.names = F) 
   write.csv(curr_lp_data, sprintf("%s/genotyping_data_imaging.csv", output_path))  
   
   days <- c(0, 3, 8, 14)

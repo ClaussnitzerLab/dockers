@@ -12,7 +12,7 @@ rm(list = ls())
 
 update_regression_arrays <- function(current_model_input, outcome, sex_label){
   current_model_input$sex <- as.factor(current_model_input$sex)
-  current_model_input$T2D <- as.factor(current_model_input$T2D)
+  # current_model_input$T2D <- as.factor(current_model_input$T2D)
   current_model_input$batch <- as.factor(current_model_input$batch)
   current_model_input <- na.omit(current_model_input)
   formula <- sprintf("get('%s') ~ genotype + age", outcome)
@@ -44,7 +44,8 @@ run_regression <- function(curr_data, group_class1, group_class2, sex_label){
   if (dim(case)[1] > 1 & dim(control)[1] > 1){
     data_anov<-rbind(case, control)
     #data_anov$genotype<-factor(data_anov$genotype, levels= c(group_class1, group_class2))
-    imaging_data <- select(data_anov, -c("batch", "newcol", "patientID", "sex", "age", "BMI", "T2D", "FFA", "cellType", "Day", "expression", "genotype"))
+    # imaging_data <- select(data_anov, -c("batch", "newcol", "patientID", "sex", "age", "BMI", "T2D", "FFA", "cellType", "Day", "expression", "genotype"))
+    imaging_data <- select(data_anov, -c("batch", "newcol", "patientID", "sex", "age", "BMI", "FFA", "cellType", "Day", "expression", "genotype"))
     for (outcome in colnames(imaging_data)){
       output <- update_regression_arrays(data_anov, outcome, sex_label)
       out <- as.data.frame(outcome)
@@ -385,8 +386,10 @@ run_analsys <- function(gene_name, gene_ensb_id, snp_name, allele, output_path, 
   ll2 <- as.data.frame(summary(as.factor(l$genotype)))
   summary(as.factor(l$genotype))
   
-  lp_meta <- select(l, c("batch", "newcol", "patientID", "sex", "age", "BMI", "T2D", "FFA", "cellType", "Day", "expression", "genotype"))
-  lp_imaging <- select(l, -c("X","batch", "newcol", "patientID", "sex", "age", "BMI", "T2D", "FFA", "cellType", "Day", "expression", "genotype"))
+  #lp_meta <- select(l, c("batch", "newcol", "patientID", "sex", "age", "BMI", "T2D", "FFA", "cellType", "Day", "expression", "genotype"))
+  #lp_imaging <- select(l, -c("X","batch", "newcol", "patientID", "sex", "age", "BMI", "T2D", "FFA", "cellType", "Day", "expression", "genotype"))
+  lp_meta <- select(l, c("batch", "newcol", "patientID", "sex", "age", "BMI", "FFA", "cellType", "Day", "expression", "genotype"))
+  lp_imaging <- select(l, -c("X","batch", "newcol", "patientID", "sex", "age", "BMI", "FFA", "cellType", "Day", "expression", "genotype"))
   
   ### cleaning imaging features
   lp_imaging[,] <- sapply(sapply(lp_imaging[,], as.numeric), as.numeric)

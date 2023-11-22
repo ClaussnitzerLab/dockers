@@ -551,6 +551,7 @@ run_eqtl_analysis <- function(gene_name, gene_ensb_id, snp_name, allele, output_
           curr_data$age <- as.numeric(curr_data$age)
           curr_data$BMI <- as.numeric(curr_data$BMI)
           curr_data$batch <- as.factor(curr_data$batch)
+          curr_data <- curr_data[complete.cases(curr_data),]
           
           formula <- "expression ~ age + BMI"
           if (length(unique(curr_data$batch)) > 1){

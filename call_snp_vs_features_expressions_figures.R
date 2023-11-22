@@ -530,7 +530,7 @@ run_eqtl_analysis <- function(gene_name, gene_ensb_id, snp_name, allele, output_
   ll2 <- as.data.frame(summary(as.factor(l$genotype)))
   summary(as.factor(l$genotype))
   
-  curr_genotype_data <- select(l, c("genotype", "expression", "FFA", "cellType", "Day", "sex", "patientID"))
+  curr_genotype_data <- select(l, c("genotype", "expression", "FFA", "cellType", "Day", "sex", "patientID", "age", "BMI", "batch"))
   curr_genotype_data$sex <- ifelse(curr_genotype_data$sex == 1, "Female", "Male")
   output_table <- as.data.frame(t(rbind(ll0, ll1, ll2)))
   
@@ -547,6 +547,19 @@ run_eqtl_analysis <- function(gene_name, gene_ensb_id, snp_name, allele, output_
       for (sex_stratified in sex_stratifications){
         for (FFA_tag in FFA_tags){
           curr_data <- subset(curr_genotype_data, curr_genotype_data$Day == day & curr_genotype_data$cellType == depot & curr_genotype_data$FFA == FFA_tag)
+          # this section adjusts for age, bmi, batch
+          curr_data$age <- as.numeric(curr_data$age)
+          curr_data$BMI <- as.numeric(curr_data$BMI)
+          curr_data$batch <- as.factor(curr_data$batch)
+          
+          formula <- "expression ~ age + BMI"
+          if (length(unique(curr_data$batch)) > 1){
+              formula <- sprintf("%s + batch", formula)
+          }
+          model <- lm(eval(formula), data = curr_data)
+          curr_data$expression <- curr_data$expression-predict(model, newdata = curr_data)
+
+          
           if (!sex_stratified){  # both sex
             sex_option <- "both"
             plot_eqtl(curr_data, output_path, depot, day, sex_option, FFA_tag, snp_name, snp_codes_00, snp_codes_11)

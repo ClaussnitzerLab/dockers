@@ -15,14 +15,11 @@ update_regression_arrays <- function(current_model_input, outcome, sex_label){
   # current_model_input$T2D <- as.factor(current_model_input$T2D)
   current_model_input$batch <- as.factor(current_model_input$batch)
   current_model_input <- na.omit(current_model_input)
-  formula <- sprintf("get('%s') ~ genotype + age", outcome)
+  formula <- sprintf("get('%s') ~ genotype + age + BMI", outcome)
   if (sex_label == "both"){  #Changed here
     if (length(unique(current_model_input$sex)) > 1){
       formula <- sprintf("%s + sex", formula)
     }        
-  }
-  if (length(unique(current_model_input$BMI)) > 1){
-    formula <- sprintf("%s + BMI", formula)
   }
   if (length(unique(current_model_input$batch)) > 1){
     formula <- sprintf("%s + batch", formula)

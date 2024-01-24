@@ -543,6 +543,7 @@ run_eqtl_analysis <- function(gene_name, gene_ensb_id, snp_name, allele, output_
     for (depot in depots){
       for (sex_stratified in sex_stratifications){
         for (FFA_tag in FFA_tags){
+          if (FFA_tag == 1 & day == 0) next
           curr_data <- subset(curr_genotype_data, curr_genotype_data$Day == day & curr_genotype_data$cellType == depot & curr_genotype_data$FFA == FFA_tag)
           # this section adjusts for age, bmi, batch
           curr_data$age <- as.numeric(curr_data$age)

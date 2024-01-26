@@ -1,4 +1,3 @@
-
 library(sjstats)
 library(cowplot)
 library(dplyr)
@@ -10,80 +9,15 @@ library(stringr)
 
 rm(list = ls())
 
-update_regression_arrays <- function(current_model_input, outcome, sex_label){
-  current_model_input$sex <- as.factor(current_model_input$sex)
-  # current_model_input$T2D <- as.factor(current_model_input$T2D)
-  current_model_input$batch <- as.factor(current_model_input$batch)
-  current_model_input <- na.omit(current_model_input)
-  formula <- sprintf("get('%s') ~ genotype + age + BMI", outcome)
-  if (sex_label == "both"){  #Changed here
-    if (length(unique(current_model_input$sex)) > 1){
-      formula <- sprintf("%s + sex", formula)
-    }        
-  }
-  if (length(unique(current_model_input$batch)) > 1){
-    formula <- sprintf("%s + batch", formula)
-  } 
-  lm_model <- summary.lm(lm(formula = formula, data = current_model_input))
-  beta <-lm_model$coefficients[2, 1]
-  pval <-lm_model$coefficients[2, 4]
-  
-  output <- list(beta, 0, pval, FALSE)
-  return(output)
-}
-
-# runnning lm 
-run_regression <- function(curr_data, group_class1, group_class2, sex_label){
-  case <- subset(curr_data, curr_data$genotype == group_class1)
-  control <- subset(curr_data, curr_data$genotype == group_class2)
-  output_df <- data.frame(matrix(ncol = 3, nrow = 0))
-  colnames(output_df) <- c("variable", "coeff", "pvalue")
-  if (dim(case)[1] > 1 & dim(control)[1] > 1){
-    data_anov<-rbind(case, control)
-    #data_anov$genotype<-factor(data_anov$genotype, levels= c(group_class1, group_class2))
-    # imaging_data <- select(data_anov, -c("batch", "newcol", "patientID", "sex", "age", "BMI", "T2D", "FFA", "cellType", "Day", "expression", "genotype"))
-    imaging_data <- select(data_anov, -c("batch", "newcol", "patientID", "sex", "age", "BMI", "FFA", "cellType", "Day", "expression", "genotype"))
-    for (outcome in colnames(imaging_data)){
-      output <- update_regression_arrays(data_anov, outcome, sex_label)
-      out <- as.data.frame(outcome)
-      colnames(out) <- c("variable")
-      out["beta"] <- as.data.frame(unlist(output[1]))
-      se <- as.array(unlist(output[2]))
-      out["pval"] <- unlist(output[3])
-      flag <- unlist(output[4])
-      if (flag[1] == FALSE){
-        output_df <- rbind(output_df, out)
-      }
-    }
-    output_df <- na.omit(output_df)
-    p<-output_df$pval
-    if (is_empty(p)){
-      model_output_final <- output_df
-    }else{
-      if (length(p) > 20){
-        qvalues<-qvalue(p)
-        q_value<-qvalues[["qvalues"]]
-      }else{
-        qvalues<-qvalue(p, lambda=0)
-        q_value<-qvalues[["qvalues"]]
-      }
-      model_output_final<-cbind(output_df, q_value)  
-    }
-    output_df <- model_output_final
-  }
-  return(output_df)
-}
-
-
 ##### volcano plaots ######
 plot_volcano <- function(volcano, image_path, image_title){
   ####define color categories###
   volcano <- volcano %>% dplyr::mutate(feature_color = 
-                                          ifelse(grepl("BODIPY", variable),'Lipid', 
-                                                  ifelse(grepl("AGP", variable),'AGP', 
-                                                         ifelse(grepl("Mito", variable),'Mito',
-                                                                ifelse(grepl("DNA", variable),'DNA',
-                                                                       'other')))))
+                                         ifelse(grepl("BODIPY", variable),'Lipid', 
+                                                ifelse(grepl("AGP", variable),'AGP', 
+                                                       ifelse(grepl("Mito", variable),'Mito',
+                                                              ifelse(grepl("DNA", variable),'DNA',
+                                                                     'other')))))
   volcano$feature_color<-factor(volcano$feature_color, levels = c("Mito","AGP","Lipid","DNA", "other"))
   ####remove missing values###
   volcano<- volcano[complete.cases(volcano), ]
@@ -335,8 +269,79 @@ generate_results <- function(features, output_path, depot, day, sex_option, FFA_
   }  
 }
 
+
+update_regression_arrays <- function(current_model_input, outcome, sex_label){
+  current_model_input$sex <- as.factor(current_model_input$sex)
+  # current_model_input$T2D <- as.factor(current_model_input$T2D)
+  current_model_input$batch <- as.factor(current_model_input$batch)
+  current_model_input <- na.omit(current_model_input)
+  formula <- sprintf("get('%s') ~ genotype + age + BMI", outcome)
+  if (sex_label == "both"){  #Changed here
+    if (length(unique(current_model_input$sex)) > 1){
+      formula <- sprintf("%s + sex", formula)
+    }        
+  }
+  if (length(unique(current_model_input$batch)) > 1){
+    formula <- sprintf("%s + batch", formula)
+  } 
+  lm_model <- summary.lm(lm(formula = formula, data = current_model_input))
+  beta <-lm_model$coefficients[2, 1]
+  pval <-lm_model$coefficients[2, 4]
+  
+  output <- list(beta, 0, pval, FALSE)
+  return(output)
+}
+
+# runnning lm 
+# curr_data <- combined_allelees, 
+# group_class1 <- group01, 
+# group_class2 <- group11, 
+# sex_label <- sex_option
+run_regression <- function(curr_data, group_class1, group_class2, sex_label){
+  case <- subset(curr_data, curr_data$genotype == group_class1)
+  control <- subset(curr_data, curr_data$genotype == group_class2)
+  output_df <- data.frame(matrix(ncol = 3, nrow = 0))
+  colnames(output_df) <- c("variable", "coeff", "pvalue")
+  if (dim(case)[1] > 1 & dim(control)[1] > 1){
+    data_anov<-rbind(case, control)
+    #data_anov$genotype<-factor(data_anov$genotype, levels= c(group_class1, group_class2))
+    # imaging_data <- select(data_anov, -c("batch", "newcol", "patientID", "sex", "age", "BMI", "T2D", "FFA", "cellType", "Day", "expression", "genotype"))
+    imaging_data <- select(data_anov, -c("batch", "newcol", "patientID", "sex", "age", "BMI", "FFA", "cellType", "Day", "expression", "genotype"))
+    for (outcome in colnames(imaging_data)){
+      output <- update_regression_arrays(data_anov, outcome, sex_label)
+      out <- as.data.frame(outcome)
+      colnames(out) <- c("variable")
+      out["beta"] <- as.data.frame(unlist(output[1]))
+      se <- as.array(unlist(output[2]))
+      out["pval"] <- unlist(output[3])
+      flag <- unlist(output[4])
+      if (flag[1] == FALSE){
+        output_df <- rbind(output_df, out)
+      }
+    }
+    output_df <- na.omit(output_df)
+    p<-output_df$pval
+    if (is_empty(p)){
+      model_output_final <- output_df
+    }else{
+      if (length(p) > 20){
+        qvalues<-qvalue(p)
+        q_value<-qvalues[["qvalues"]]
+      }else{
+        qvalues<-qvalue(p, lambda=0)
+        q_value<-qvalues[["qvalues"]]
+      }
+      model_output_final<-cbind(output_df, q_value)  
+    }
+    output_df <- model_output_final
+  }
+  return(output_df)
+}
+
 # run analysis on a set of features
+# curr_data, output_path, depot, day, sex_option, FFA_tag
 run_on_a_set <- function(curr_data, output_path, depot, day, sex_option, FFA_tag){
+  row <- 1
   for (row in 1:nrow(not_combined_group_definitions)) {
     g1 <- not_combined_group_definitions[row, "Group0"]
     g2  <- not_combined_group_definitions[row, "Group1"]
@@ -407,7 +412,7 @@ run_analsys <- function(gene_name, gene_ensb_id, snp_name, allele, output_path, 
   curr_lp_data<-cbind(lp_meta, lp_imaging)
   curr_lp_data <- curr_lp_data[complete.cases(curr_lp_data), ]
   
-  curr_lp_data$sex <- ifelse(curr_lp_data$sex == 1, "Female", "Male")
+  curr_lp_data$sex <- ifelse(curr_lp_data$sex == 2, "Female", "Male")
   output_table <- as.data.frame(t(rbind(ll0, ll1, ll2)))
   
   write.csv(output_table, sprintf("%s/allele_info_imaging.csv", output_path), row.names = F) 
@@ -420,7 +425,7 @@ run_analsys <- function(gene_name, gene_ensb_id, snp_name, allele, output_path, 
   
   
   
-  day <- 0
+  day <- 14
   depot <- "sc"
   FFA_tag <- 0
   sex_stratified <- FALSE
@@ -447,10 +452,19 @@ run_analsys <- function(gene_name, gene_ensb_id, snp_name, allele, output_path, 
   }
 }
 
-plot_expression_per_allelee <- function(curr_plot_data, snp_name, image_title, image_path){
+#curr_plot_data <- combined_allelees
+# combined_allelees, snp_name, image_title, image_path, day, depot, FFA_tag, expression_result_table
+plot_expression_per_allelee <- function(curr_plot_data, snp_name, image_title, image_path, day, depot, FFA_tag, expression_result_table){
   curr_plot_data["genotype"] <- as.factor(curr_plot_data$genotype)
   summary(as.factor(curr_plot_data$genotype))
   base <- max(curr_plot_data$expression)
+  writeLines(sprintf("%d", length(unique(curr_plot_data$genotype))))
+  if (length(unique(curr_plot_data$genotype)) == 2){
+    res <- wilcox.test(expression ~ genotype, data = curr_plot_data)
+    temp <- data.frame(day, depot, FFA_tag, image_title, res$p.value)
+    colnames(temp) <- colnames(expression_result_table)
+    expression_result_table <- rbind(expression_result_table, temp)
+  }
   ggplot(curr_plot_data, aes(x=genotype, y=expression)) + 
     geom_boxplot() + ggtitle(image_title) + 
     xlab("Genotype") + ylab(sprintf("Expression %s(%s;%s)", gene_name, gene_ensb_id, snp_name)) + 
@@ -458,8 +472,8 @@ plot_expression_per_allelee <- function(curr_plot_data, snp_name, image_title, i
     geom_signif(comparisons=list(c(sprintf("%s/%s", snp_codes_00, snp_codes_00), sprintf("%s/%s", snp_codes_11, snp_codes_11))),  tip_length = 0, vjust=0.1, y_position = base) + 
     geom_signif(comparisons=list(c(sprintf("%s/%s", snp_codes_00, snp_codes_00), sprintf("%s/%s", snp_codes_00, snp_codes_11))),  tip_length = 0, vjust=0.1, y_position = base+50) +
     geom_signif(comparisons=list(c(sprintf("%s/%s", snp_codes_11, snp_codes_11), sprintf("%s/%s", snp_codes_00, snp_codes_11))),  tip_length = 0, vjust=0.1, y_position = base+100)
-  
-  ggsave(image_path)  
+  ggsave(image_path)
+  return(expression_result_table)
 }
 
 clean_db <- function(temp){
@@ -476,12 +490,19 @@ clean_db <- function(temp){
   return(temp)
 }
 
-plot_eqtl <- function(curr_data, output_path, depot, day, sex_option, FFA_tag, snp_name, snp_codes_00, snp_codes_11){
+plot_eqtl <- function(curr_data, output_path, depot, day, sex_option, FFA_tag, snp_name, snp_codes_00, snp_codes_11, expression_result_table){
+  #curr_data <- curr_data_male, output_path, depot, day, sex_option, FFA_tag, snp_name, snp_codes_00, snp_codes_11, expression_result_table
+  if (length(unique(curr_data$sex))>1){
+    formula <- sprintf("%s + sex", formula)
+  }
+  model <- lm(eval(formula), data = curr_data)
+  curr_data$expression <- curr_data$expression-predict(model, newdata = curr_data)
+  
   curr_temp <- clean_db(curr_data)
   if (length(unique(curr_temp$genotype )) >= 2){
     image_title <- sprintf("%s;%s;%s;%s", depot, day, sex_option, FFA_tag)
     image_path <- sprintf("%s/figures/%s_%s_%s_%s.pdf", output_path, depot, day, sex_option, FFA_tag)
-    plot_expression_per_allelee(curr_data, snp_name, image_title, image_path)
+    expression_result_table <- plot_expression_per_allelee(curr_data, snp_name, image_title, image_path, day, depot, FFA_tag, expression_result_table)
   }
   
   #### combining minor allelee and heter
@@ -498,7 +519,7 @@ plot_eqtl <- function(curr_data, output_path, depot, day, sex_option, FFA_tag, s
     image_path <- sprintf("%s/figures/%s_%s_%s_%s_%s.pdf", output_path, depot, day, sex_option, FFA_tag, sprintf("combined_%s_%s", 
                                                                                                                  str_replace(minor, "/", ""), 
                                                                                                                  str_replace(heter, "/", "")))
-    plot_expression_per_allelee(combined_allelees, snp_name, image_title, image_path)
+    expression_result_table <- plot_expression_per_allelee(combined_allelees, snp_name, image_title, image_path, day, depot, FFA_tag, expression_result_table)
   }
   
   combined_allelees <- curr_data
@@ -509,11 +530,12 @@ plot_eqtl <- function(curr_data, output_path, depot, day, sex_option, FFA_tag, s
     image_path <- sprintf("%s/figures/%s_%s_%s_%s_%s.pdf", output_path, depot, day, sex_option, FFA_tag, sprintf("combined_%s_%s", 
                                                                                                                  str_replace(major, "/", ""), 
                                                                                                                  str_replace(heter, "/", "")))
-    plot_expression_per_allelee(combined_allelees, snp_name, image_title, image_path)
+    expression_result_table <- plot_expression_per_allelee(combined_allelees, snp_name, image_title, image_path, day, depot, FFA_tag, expression_result_table)
   }
+  return(expression_result_table)
 }
 
-run_eqtl_analysis <- function(gene_name, gene_ensb_id, snp_name, allele, output_path, snp_coordinate, snp_codes_00, snp_codes_11){
+run_eqtl_analysis <- function(gene_name, gene_ensb_id, snp_name, allele, output_path, snp_coordinate, snp_codes_00, snp_codes_11, expression_result_table){
   allele["ID"] <- rownames(allele)
   # names(allele)[names(allele) == snp_coordinate] <- "genotype"
   l <- merge(data, allele, by.x = "patientID", by.y = "ID")
@@ -528,7 +550,7 @@ run_eqtl_analysis <- function(gene_name, gene_ensb_id, snp_name, allele, output_
   summary(as.factor(l$genotype))
   
   curr_genotype_data <- select(l, c("genotype", "expression", "FFA", "cellType", "Day", "sex", "patientID", "age", "BMI", "batch"))
-  curr_genotype_data$sex <- ifelse(curr_genotype_data$sex == 1, "Female", "Male")
+  curr_genotype_data$sex <- ifelse(curr_genotype_data$sex == 2, "Female", "Male")
   output_table <- as.data.frame(t(rbind(ll0, ll1, ll2)))
   
   write.csv(output_table, sprintf("%s/allele_info.csv", output_path))
@@ -539,11 +561,14 @@ run_eqtl_analysis <- function(gene_name, gene_ensb_id, snp_name, allele, output_
   sex_stratifications <- c(TRUE, FALSE) 
   FFA_tags <- c(0, 1)
   
+  day <- 0
+  depot <- "sc"
+  FFA_tag <- 0
   for (day in days){
     for (depot in depots){
       for (sex_stratified in sex_stratifications){
         for (FFA_tag in FFA_tags){
-          if (FFA_tag == 1 & day == 0) next
+          if (FFA_tag == 1 & day == 0) next;
           curr_data <- subset(curr_genotype_data, curr_genotype_data$Day == day & curr_genotype_data$cellType == depot & curr_genotype_data$FFA == FFA_tag)
           # this section adjusts for age, bmi, batch
           curr_data$age <- as.numeric(curr_data$age)
@@ -553,27 +578,25 @@ run_eqtl_analysis <- function(gene_name, gene_ensb_id, snp_name, allele, output_
           
           formula <- "expression ~ age + BMI"
           if (length(unique(curr_data$batch)) > 1){
-              formula <- sprintf("%s + batch", formula)
+            formula <- sprintf("%s + batch", formula)
           }
-          model <- lm(eval(formula), data = curr_data)
-          curr_data$expression <- curr_data$expression-predict(model, newdata = curr_data)
 
-          
           if (!sex_stratified){  # both sex
             sex_option <- "both"
-            plot_eqtl(curr_data, output_path, depot, day, sex_option, FFA_tag, snp_name, snp_codes_00, snp_codes_11)
+            expression_result_table <- plot_eqtl(curr_data, output_path, depot, day, sex_option, FFA_tag, snp_name, snp_codes_00, snp_codes_11, expression_result_table)
           }else{  # sex stratifies
             sex_option <- "Male"
             curr_data_male <- subset(curr_data, curr_data$sex == "Male")
-            plot_eqtl(curr_data_male, output_path, depot, day, sex_option, FFA_tag, snp_name, snp_codes_00, snp_codes_11)
+            expression_result_table <- plot_eqtl(curr_data_male, output_path, depot, day, sex_option, FFA_tag, snp_name, snp_codes_00, snp_codes_11, expression_result_table)
             sex_option <- "Female"
             curr_data_Female <- subset(curr_data, curr_data$sex == "Female")
-            plot_eqtl(curr_data_Female, output_path, depot, day, sex_option, FFA_tag, snp_name, snp_codes_00, snp_codes_11)
+            expression_result_table <- plot_eqtl(curr_data_Female, output_path, depot, day, sex_option, FFA_tag, snp_name, snp_codes_00, snp_codes_11, expression_result_table)
           }
         }
       }
     }
   }
+  return(expression_result_table)
 }
 
 args = commandArgs(trailingOnly=TRUE)
@@ -586,11 +609,13 @@ snp_coordinate <- args[6]
 snp_codes_00 <- args[7]
 snp_codes_11 <- args[8]
 
+
 root_output <- "LP_output"
 dir.create(root_output)
 
 data<-read.csv(LP_data_path)
-
+data[gene_ensb_id] <- scale(data[gene_ensb_id])
+summary(as.factor(data$sex))
 output_path <- sprintf("%s/snp_features_%s", root_output, snp_name)
 dir.create(file.path(output_path))
 
@@ -608,6 +633,14 @@ SimpGroup0 <- c(simple_group00, simple_group00, simple_group11)
 SimpGroup1 <- c(simple_group01, simple_group11, simple_group01)
 not_combined_group_definitions <- data.frame(Group0, Group1, SimpGroup0, SimpGroup1)
 
+df <- select(data, c("sex", "Day", "cellType", gene_ensb_id))
+colnames(df) <- c("sex", "Day", "cellType", "expression")
+df$Day <- as.factor(df$Day)
+df$sex <- ifelse(df$sex == 2, "Female", "Male")
+df$sex <- as.factor(df$sex)
+ggplot(df, aes(x=Day, y=expression, fill=sex)) + geom_boxplot()+facet_grid(~cellType)
+ggsave(sprintf("%s/expression_%s.pdf", output_path, gene_ensb_id))
+
 
 vcf <- read.csv(input_vcf_file)
 rownames(vcf) <- vcf$IDs
@@ -615,4 +648,7 @@ allele <- vcf # as.data.frame(vcfR2loci(vcf))
 dir.create(file.path(sprintf("%s/figures", output_path)))
 dir.create(file.path(sprintf("%s/tables", output_path)))
 run_analsys(gene_name, gene_ensb_id, snp_name, allele, output_path, snp_coordinate, snp_codes_00, snp_codes_11)
-run_eqtl_analysis(gene_name, gene_ensb_id, snp_name, allele, output_path, snp_coordinate, snp_codes_00, snp_codes_11)
+expression <- run_eqtl_analysis(gene_name, gene_ensb_id, snp_name, allele, output_path, snp_coordinate, snp_codes_00, snp_codes_11, expression_result_table)
+write.csv(expression, sprintf("%s/eqtl_p.csv", output_path), row.names = F)
+
+

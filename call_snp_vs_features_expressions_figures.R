@@ -452,13 +452,14 @@ run_analsys <- function(gene_name, gene_ensb_id, snp_name, allele, output_path, 
   }
 }
 
-#curr_plot_data <- combined_allelees
+#curr_plot_data <- curr_temp
 # combined_allelees, snp_name, image_title, image_path, day, depot, FFA_tag, expression_result_table
 plot_expression_per_allelee <- function(curr_plot_data, snp_name, image_title, image_path, day, depot, FFA_tag, expression_result_table){
   curr_plot_data["genotype"] <- as.factor(curr_plot_data$genotype)
-  summary(as.factor(curr_plot_data$genotype))
+  # summary(as.factor(curr_plot_data$genotype))
+  # writeLines(sprintf("%d", length(unique(curr_plot_data$genotype))))
   base <- max(curr_plot_data$expression)
-  writeLines(sprintf("%d", length(unique(curr_plot_data$genotype))))
+  
   if (length(unique(curr_plot_data$genotype)) == 2){
     res <- wilcox.test(expression ~ genotype, data = curr_plot_data)
     temp <- data.frame(day, depot, FFA_tag, image_title, res$p.value)
@@ -470,8 +471,8 @@ plot_expression_per_allelee <- function(curr_plot_data, snp_name, image_title, i
     xlab("Genotype") + ylab(sprintf("Expression %s(%s;%s)", gene_name, gene_ensb_id, snp_name)) + 
     geom_dotplot(binaxis='y', stackdir='center', dotsize=1) + 
     geom_signif(comparisons=list(c(sprintf("%s/%s", snp_codes_00, snp_codes_00), sprintf("%s/%s", snp_codes_11, snp_codes_11))),  tip_length = 0, vjust=0.1, y_position = base) + 
-    geom_signif(comparisons=list(c(sprintf("%s/%s", snp_codes_00, snp_codes_00), sprintf("%s/%s", snp_codes_00, snp_codes_11))),  tip_length = 0, vjust=0.1, y_position = base+50) +
-    geom_signif(comparisons=list(c(sprintf("%s/%s", snp_codes_11, snp_codes_11), sprintf("%s/%s", snp_codes_00, snp_codes_11))),  tip_length = 0, vjust=0.1, y_position = base+100)
+    geom_signif(comparisons=list(c(sprintf("%s/%s", snp_codes_00, snp_codes_00), sprintf("%s/%s", snp_codes_00, snp_codes_11))),  tip_length = 0, vjust=0.1, y_position = base+floor(base/3)) +
+    geom_signif(comparisons=list(c(sprintf("%s/%s", snp_codes_11, snp_codes_11), sprintf("%s/%s", snp_codes_00, snp_codes_11))),  tip_length = 0, vjust=0.1, y_position = base+floor(base/2))
   ggsave(image_path)
   return(expression_result_table)
 }
@@ -490,7 +491,7 @@ clean_db <- function(temp){
   return(temp)
 }
 
-plot_eqtl <- function(curr_data, output_path, depot, day, sex_option, FFA_tag, snp_name, snp_codes_00, snp_codes_11, expression_result_table){
+plot_eqtl <- function(curr_data, output_path, depot, day, sex_option, FFA_tag, snp_name, snp_codes_00, snp_codes_11, expression_result_table, formula){
   #curr_data <- curr_data_male, output_path, depot, day, sex_option, FFA_tag, snp_name, snp_codes_00, snp_codes_11, expression_result_table
   if (length(unique(curr_data$sex))>1){
     formula <- sprintf("%s + sex", formula)
@@ -583,14 +584,14 @@ run_eqtl_analysis <- function(gene_name, gene_ensb_id, snp_name, allele, output_
 
           if (!sex_stratified){  # both sex
             sex_option <- "both"
-            expression_result_table <- plot_eqtl(curr_data, output_path, depot, day, sex_option, FFA_tag, snp_name, snp_codes_00, snp_codes_11, expression_result_table)
+            expression_result_table <- plot_eqtl(curr_data, output_path, depot, day, sex_option, FFA_tag, snp_name, snp_codes_00, snp_codes_11, expression_result_table, formula)
           }else{  # sex stratifies
             sex_option <- "Male"
             curr_data_male <- subset(curr_data, curr_data$sex == "Male")
-            expression_result_table <- plot_eqtl(curr_data_male, output_path, depot, day, sex_option, FFA_tag, snp_name, snp_codes_00, snp_codes_11, expression_result_table)
+            expression_result_table <-  plot_eqtl(curr_data_male, output_path, depot, day, sex_option, FFA_tag, snp_name, snp_codes_00, snp_codes_11, expression_result_table, formula)
             sex_option <- "Female"
             curr_data_Female <- subset(curr_data, curr_data$sex == "Female")
-            expression_result_table <- plot_eqtl(curr_data_Female, output_path, depot, day, sex_option, FFA_tag, snp_name, snp_codes_00, snp_codes_11, expression_result_table)
+            expression_result_table <- plot_eqtl(curr_data_Female, output_path, depot, day, sex_option, FFA_tag, snp_name, snp_codes_00, snp_codes_11, expression_result_table, formula)
           }
         }
       }
@@ -598,6 +599,7 @@ run_eqtl_analysis <- function(gene_name, gene_ensb_id, snp_name, allele, output_
   }
   return(expression_result_table)
 }
+
 
 args = commandArgs(trailingOnly=TRUE)
 LP_data_path <- args[1]
@@ -610,11 +612,11 @@ snp_codes_00 <- args[7]
 snp_codes_11 <- args[8]
 
 
-root_output <- "LP_output"
+
+root_output <- "LP_output_local"
 dir.create(root_output)
 
 data<-read.csv(LP_data_path)
-data[gene_ensb_id] <- scale(data[gene_ensb_id])
 summary(as.factor(data$sex))
 output_path <- sprintf("%s/snp_features_%s", root_output, snp_name)
 dir.create(file.path(output_path))
@@ -648,7 +650,14 @@ allele <- vcf # as.data.frame(vcfR2loci(vcf))
 dir.create(file.path(sprintf("%s/figures", output_path)))
 dir.create(file.path(sprintf("%s/tables", output_path)))
 run_analsys(gene_name, gene_ensb_id, snp_name, allele, output_path, snp_coordinate, snp_codes_00, snp_codes_11)
-expression <- run_eqtl_analysis(gene_name, gene_ensb_id, snp_name, allele, output_path, snp_coordinate, snp_codes_00, snp_codes_11, expression_result_table)
+run_eqtl_analysis(gene_name, gene_ensb_id, snp_name, allele, output_path, snp_coordinate,   snp_codes_00, snp_codes_11, expression_result_table)
+write.csv(expression, sprintf("%s/eqtl_p.csv", output_path), row.names = F)
+
+
+
+
+
+
 write.csv(expression, sprintf("%s/eqtl_p.csv", output_path), row.names = F)
 
 

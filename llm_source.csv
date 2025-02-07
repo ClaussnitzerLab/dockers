@@ -1,0 +1,2 @@
+Metadata CellType,Metadata DiffDay,Metadata Depot,Metadata Stimulation,Metadata Clinical phase,Metadata Disease area,Metadata Indication,Source,SourceType,Properties Source Channel,Effector,EffectorType,Properties Effector Coordinate,Properties Effector Reported Gene,Relation value,Relation type,Relation pvalue,Relation significant,ProjectID,SourceID,EffectorID
+hWAT,D00,,,,,,Cells Intensity MassDisplacement AGP,LipocyteProfiler Feature,AGP,LTBP2,Gene,,,-0.6714881544,wilcox effsize,4.91e-06,q,CRISPRi LTBP2 KD,1,1

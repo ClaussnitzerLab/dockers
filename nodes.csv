@@ -1,4 +1,5 @@
-Id,Name,Skills,Channel
-1,Joe Smith,Cypher:Java:JavaScript,joe@neo4j.com
-2,Mary Jones,Java,mary@neo4j.com
-3,Trevor Scott,Java:JavaScript,trevor@neo4j.com
+Id,Name,Type,Property
+1,rs12207675,SNPS,6_75528025
+2,rs12210905,SNPS,6_27183530
+3,rs1294410,SNPS,6_6738519
+4,rs13216391,SNPS,6_7789710

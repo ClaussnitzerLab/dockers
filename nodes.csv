@@ -1,4 +1,4 @@
 Id,Name,Skills,Email
-1,Joe Smith,Cypher:Java:JavaScript,joe@neo4j.com
+1,Joe Smith,"Cypher:Java:JavaScript",joe@neo4j.com
 2,Mary Jones,Java,mary@neo4j.com
-3,Trevor Scott,Java:JavaScript,trevor@neo4j.com
+3,Trevor Scott,"Java:JavaScript",trevor@neo4j.com

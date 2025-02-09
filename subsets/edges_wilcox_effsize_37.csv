@@ -1,0 +1,82 @@
+FromID,ToID,Relation_type,Relation_Context_ClinicalPhase,Relation_Context_DiseaseArea,Relation_Context_Indication
+648,649,MoA,Launched,dermatology,xerosis cutis|ichthyosis vulgaris
+1169,1170,MoA,Launched,gastroenterology,pancreas diagnostic agent
+441,1750,MoA,Launched,endocrinology,vitamin D deficiency
+354,2807,MoA,Launched,endocrinology,contraceptive
+460,2807,MoA,Launched,endocrinology,contraceptive
+1545,2950,MoA,Launched,endocrinology,Addison's disease|adrenogenital syndrome
+334,2962,MoA,Launched,ophthalmology,ophthalmology diagnostic
+423,2964,MoA,Launched,ophthalmology,eye inflammation
+3372,3373,MoA,Launched,rheumatology|urology,osteoarthritis|interstitial cystitis (IC)
+3374,3373,MoA,Launched,rheumatology|urology,osteoarthritis|interstitial cystitis (IC)
+3375,3373,MoA,Launched,rheumatology|urology,osteoarthritis|interstitial cystitis (IC)
+3376,3373,MoA,Launched,rheumatology|urology,osteoarthritis|interstitial cystitis (IC)
+3377,3373,MoA,Launched,rheumatology|urology,osteoarthritis|interstitial cystitis (IC)
+3378,3373,MoA,Launched,rheumatology|urology,osteoarthritis|interstitial cystitis (IC)
+3379,3373,MoA,Launched,rheumatology|urology,osteoarthritis|interstitial cystitis (IC)
+1068,3373,MoA,Launched,rheumatology|urology,osteoarthritis|interstitial cystitis (IC)
+3380,3373,MoA,Launched,rheumatology|urology,osteoarthritis|interstitial cystitis (IC)
+3381,3373,MoA,Launched,rheumatology|urology,osteoarthritis|interstitial cystitis (IC)
+3755,3756,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis
+3757,3756,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis
+3758,3756,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis
+3759,3756,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis
+1975,3756,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis
+3760,3756,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis
+3761,3756,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis
+3762,3756,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis
+1470,3756,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis
+3740,3756,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis
+211,3756,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis
+3763,3756,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis
+3715,3756,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis
+3764,3756,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis
+228,3807,MoA,Launched,gastroenterology|dental|neurology/psychiatry|rheumatology,diarrhea|mucositis|muscle pain|joint pain|peptic ulcer disease (PUD)|ulcerative colitis|Crohn's disease|anxiety|insomnia
+3790,3807,MoA,Launched,gastroenterology|dental|neurology/psychiatry|rheumatology,diarrhea|mucositis|muscle pain|joint pain|peptic ulcer disease (PUD)|ulcerative colitis|Crohn's disease|anxiety|insomnia
+1001,3807,MoA,Launched,gastroenterology|dental|neurology/psychiatry|rheumatology,diarrhea|mucositis|muscle pain|joint pain|peptic ulcer disease (PUD)|ulcerative colitis|Crohn's disease|anxiety|insomnia
+961,3807,MoA,Launched,gastroenterology|dental|neurology/psychiatry|rheumatology,diarrhea|mucositis|muscle pain|joint pain|peptic ulcer disease (PUD)|ulcerative colitis|Crohn's disease|anxiety|insomnia
+1943,3932,MoA,Launched,endocrinology,carnitine deficiency
+3933,3932,MoA,Launched,endocrinology,carnitine deficiency
+510,3939,MoA,Launched,neurology/psychiatry,pain relief
+67,3939,MoA,Launched,neurology/psychiatry,pain relief
+694,3939,MoA,Launched,neurology/psychiatry,pain relief
+3940,3939,MoA,Launched,neurology/psychiatry,pain relief
+144,3966,MoA,Launched,infectious disease,scabies
+690,3966,MoA,Launched,infectious disease,scabies
+994,3966,MoA,Launched,infectious disease,scabies
+995,3966,MoA,Launched,infectious disease,scabies
+996,3966,MoA,Launched,infectious disease,scabies
+801,4196,MoA,Launched,dermatology,skin depigmentation
+460,4556,MoA,Launched,endocrinology,contraceptive
+185,4912,MoA,Preclinical,otolaryngology,pharyngitis
+186,4912,MoA,Preclinical,otolaryngology,pharyngitis
+187,4912,MoA,Preclinical,otolaryngology,pharyngitis
+188,4912,MoA,Preclinical,otolaryngology,pharyngitis
+190,4912,MoA,Preclinical,otolaryngology,pharyngitis
+1617,4912,MoA,Preclinical,otolaryngology,pharyngitis
+4180,4934,MoA,Launched,hematology,vitamin K deficiency|anticoagulation reversal
+706,4934,MoA,Launched,hematology,vitamin K deficiency|anticoagulation reversal
+1108,4946,MoA,Launched,dermatology,xerosis cutis
+4947,4946,MoA,Launched,dermatology,xerosis cutis
+161,4946,MoA,Launched,dermatology,xerosis cutis
+4948,4946,MoA,Launched,dermatology,xerosis cutis
+1848,4946,MoA,Launched,dermatology,xerosis cutis
+1261,4946,MoA,Launched,dermatology,xerosis cutis
+4949,4946,MoA,Launched,dermatology,xerosis cutis
+4950,4946,MoA,Launched,dermatology,xerosis cutis
+4951,4946,MoA,Launched,dermatology,xerosis cutis
+4952,4946,MoA,Launched,dermatology,xerosis cutis
+4953,4946,MoA,Launched,dermatology,xerosis cutis
+569,5134,MoA,Launched,dermatology,psoriasis|eczema|vitiligo
+1248,5134,MoA,Launched,dermatology,psoriasis|eczema|vitiligo
+5153,5154,MoA,Launched,neurology/psychiatry,epilepsy
+262,5608,MoA,Launched,dental,cavities
+4183,5611,MoA,Launched,dermatology,varicose veins
+5704,5705,MoA,Launched,neurology/psychiatry,muscle relaxant
+73,5705,MoA,Launched,neurology/psychiatry,muscle relaxant
+74,5705,MoA,Launched,neurology/psychiatry,muscle relaxant
+75,5705,MoA,Launched,neurology/psychiatry,muscle relaxant
+332,5705,MoA,Launched,neurology/psychiatry,muscle relaxant
+1733,5705,MoA,Launched,neurology/psychiatry,muscle relaxant
+369,5939,MoA,Launched,ophthalmology,contact dermatitis
+334,6514,MoA,Launched,nephrology,renal diagnostic agent

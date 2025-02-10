@@ -1,0 +1,481 @@
+FromID,ToID,Relation_type,Relation_Context_ClinicalPhase
+176,177,MoA,Phase 3
+178,177,MoA,Phase 3
+179,177,MoA,Phase 3
+781,782,MoA,Phase 1/Phase 2
+824,825,MoA,Phase 1
+865,866,MoA,Launched
+53,866,MoA,Launched
+1158,1159,MoA,Phase 3
+1160,1159,MoA,Phase 3
+832,1159,MoA,Phase 3
+421,1159,MoA,Phase 3
+354,1159,MoA,Phase 3
+766,1159,MoA,Phase 3
+1161,1159,MoA,Phase 3
+1162,1159,MoA,Phase 3
+176,1180,MoA,Preclinical
+217,1202,MoA,Phase 1
+185,1615,MoA,Preclinical
+186,1615,MoA,Preclinical
+187,1615,MoA,Preclinical
+188,1615,MoA,Preclinical
+1616,1615,MoA,Preclinical
+1617,1615,MoA,Preclinical
+1751,1752,MoA,Preclinical
+1832,1833,MoA,Preclinical
+1941,1942,MoA,Launched
+1943,1942,MoA,Launched
+1852,1942,MoA,Launched
+1944,1942,MoA,Launched
+477,1942,MoA,Launched
+1945,1942,MoA,Launched
+1946,1942,MoA,Launched
+1947,1942,MoA,Launched
+1948,1949,MoA,Phase 2
+1950,1949,MoA,Phase 2
+1951,1949,MoA,Phase 2
+1952,1949,MoA,Phase 2
+1753,1949,MoA,Phase 2
+1953,1949,MoA,Phase 2
+1954,1949,MoA,Phase 2
+1955,1949,MoA,Phase 2
+255,1949,MoA,Phase 2
+867,1949,MoA,Phase 2
+1956,1949,MoA,Phase 2
+1252,1949,MoA,Phase 2
+1957,1949,MoA,Phase 2
+1958,1949,MoA,Phase 2
+1959,1949,MoA,Phase 2
+1960,1949,MoA,Phase 2
+1961,1949,MoA,Phase 2
+426,1949,MoA,Phase 2
+1962,1949,MoA,Phase 2
+1963,1949,MoA,Phase 2
+1964,1949,MoA,Phase 2
+1965,1949,MoA,Phase 2
+1966,1949,MoA,Phase 2
+1967,1949,MoA,Phase 2
+1968,1949,MoA,Phase 2
+1969,1949,MoA,Phase 2
+1970,1949,MoA,Phase 2
+1971,1949,MoA,Phase 2
+1972,1949,MoA,Phase 2
+1973,1949,MoA,Phase 2
+1974,1949,MoA,Phase 2
+1975,1949,MoA,Phase 2
+1976,1949,MoA,Phase 2
+95,1949,MoA,Phase 2
+1977,1949,MoA,Phase 2
+1978,1949,MoA,Phase 2
+605,1949,MoA,Phase 2
+1979,1949,MoA,Phase 2
+1980,1949,MoA,Phase 2
+1981,1949,MoA,Phase 2
+1982,1949,MoA,Phase 2
+1983,1949,MoA,Phase 2
+1984,1949,MoA,Phase 2
+1985,1949,MoA,Phase 2
+1986,1949,MoA,Phase 2
+1609,1949,MoA,Phase 2
+1987,1949,MoA,Phase 2
+1988,1949,MoA,Phase 2
+1989,1949,MoA,Phase 2
+1990,1949,MoA,Phase 2
+477,1949,MoA,Phase 2
+1991,1949,MoA,Phase 2
+1992,1949,MoA,Phase 2
+1993,1949,MoA,Phase 2
+202,1949,MoA,Phase 2
+204,1949,MoA,Phase 2
+754,1949,MoA,Phase 2
+1994,1949,MoA,Phase 2
+1995,1949,MoA,Phase 2
+1996,1949,MoA,Phase 2
+1997,1949,MoA,Phase 2
+1998,1949,MoA,Phase 2
+1999,1949,MoA,Phase 2
+2000,1949,MoA,Phase 2
+2001,1949,MoA,Phase 2
+2002,1949,MoA,Phase 2
+2003,1949,MoA,Phase 2
+2004,1949,MoA,Phase 2
+612,1949,MoA,Phase 2
+936,1949,MoA,Phase 2
+2005,1949,MoA,Phase 2
+2006,1949,MoA,Phase 2
+2007,1949,MoA,Phase 2
+2008,1949,MoA,Phase 2
+2009,1949,MoA,Phase 2
+2010,1949,MoA,Phase 2
+1859,1949,MoA,Phase 2
+2011,1949,MoA,Phase 2
+2012,1949,MoA,Phase 2
+2013,1949,MoA,Phase 2
+2014,1949,MoA,Phase 2
+2015,1949,MoA,Phase 2
+2016,1949,MoA,Phase 2
+2017,1949,MoA,Phase 2
+2018,1949,MoA,Phase 2
+2019,1949,MoA,Phase 2
+2020,1949,MoA,Phase 2
+2021,1949,MoA,Phase 2
+2022,1949,MoA,Phase 2
+2023,1949,MoA,Phase 2
+2024,1949,MoA,Phase 2
+2025,1949,MoA,Phase 2
+2026,1949,MoA,Phase 2
+2027,1949,MoA,Phase 2
+2028,1949,MoA,Phase 2
+2029,1949,MoA,Phase 2
+2030,1949,MoA,Phase 2
+2031,1949,MoA,Phase 2
+2032,1949,MoA,Phase 2
+2033,1949,MoA,Phase 2
+2034,1949,MoA,Phase 2
+2035,1949,MoA,Phase 2
+2036,1949,MoA,Phase 2
+2037,1949,MoA,Phase 2
+2038,1949,MoA,Phase 2
+2039,1949,MoA,Phase 2
+2040,1949,MoA,Phase 2
+2041,1949,MoA,Phase 2
+2042,1949,MoA,Phase 2
+2043,1949,MoA,Phase 2
+2044,1949,MoA,Phase 2
+2045,1949,MoA,Phase 2
+2046,1949,MoA,Phase 2
+2047,1949,MoA,Phase 2
+2048,1949,MoA,Phase 2
+2049,1949,MoA,Phase 2
+2050,1949,MoA,Phase 2
+2051,1949,MoA,Phase 2
+2052,1949,MoA,Phase 2
+2053,1949,MoA,Phase 2
+2054,1949,MoA,Phase 2
+2055,1949,MoA,Phase 2
+2056,1949,MoA,Phase 2
+2057,1949,MoA,Phase 2
+2058,1949,MoA,Phase 2
+2059,1949,MoA,Phase 2
+2060,1949,MoA,Phase 2
+2061,1949,MoA,Phase 2
+2062,1949,MoA,Phase 2
+1602,1949,MoA,Phase 2
+2063,1949,MoA,Phase 2
+2064,1949,MoA,Phase 2
+2065,1949,MoA,Phase 2
+2066,1949,MoA,Phase 2
+2067,1949,MoA,Phase 2
+2068,1949,MoA,Phase 2
+2069,1949,MoA,Phase 2
+2070,1949,MoA,Phase 2
+2071,1949,MoA,Phase 2
+2072,1949,MoA,Phase 2
+2073,1949,MoA,Phase 2
+2074,1949,MoA,Phase 2
+801,1949,MoA,Phase 2
+2075,1949,MoA,Phase 2
+2084,2085,MoA,Phase 3
+2086,2085,MoA,Phase 3
+2087,2085,MoA,Phase 3
+2128,2129,MoA,Launched
+2130,2129,MoA,Launched
+2131,2129,MoA,Launched
+2132,2129,MoA,Launched
+2133,2129,MoA,Launched
+2134,2129,MoA,Launched
+2141,2142,MoA,Phase 2
+2182,2183,MoA,Preclinical
+331,2183,MoA,Preclinical
+2235,2236,MoA,Phase 3
+407,2236,MoA,Phase 3
+1252,2236,MoA,Phase 3
+188,2236,MoA,Phase 3
+2237,2236,MoA,Phase 3
+116,2236,MoA,Phase 3
+2238,2236,MoA,Phase 3
+2239,2236,MoA,Phase 3
+959,2236,MoA,Phase 3
+1554,2236,MoA,Phase 3
+197,2236,MoA,Phase 3
+1287,2236,MoA,Phase 3
+881,2236,MoA,Phase 3
+1770,2236,MoA,Phase 3
+1280,2236,MoA,Phase 3
+2240,2236,MoA,Phase 3
+2241,2236,MoA,Phase 3
+163,2245,MoA,Preclinical
+67,2441,MoA,Preclinical
+2499,2500,MoA,Phase 1
+824,2522,MoA,Preclinical
+881,2893,MoA,Preclinical
+2925,2926,MoA,Preclinical
+2927,2926,MoA,Preclinical
+1950,2926,MoA,Preclinical
+2928,2926,MoA,Preclinical
+2929,2926,MoA,Preclinical
+2930,2926,MoA,Preclinical
+1976,2926,MoA,Preclinical
+1176,2926,MoA,Preclinical
+1980,2926,MoA,Preclinical
+2686,2926,MoA,Preclinical
+2931,2926,MoA,Preclinical
+2932,2926,MoA,Preclinical
+2933,2926,MoA,Preclinical
+2934,2926,MoA,Preclinical
+1609,2926,MoA,Preclinical
+1856,2926,MoA,Preclinical
+2935,2926,MoA,Preclinical
+569,2926,MoA,Preclinical
+1248,2926,MoA,Preclinical
+1287,2926,MoA,Preclinical
+2448,2926,MoA,Preclinical
+1602,2926,MoA,Preclinical
+2936,2926,MoA,Preclinical
+830,2926,MoA,Preclinical
+457,2926,MoA,Preclinical
+3024,3025,MoA,Preclinical
+3134,3135,MoA,Launched
+253,3279,MoA,Preclinical
+200,3340,MoA,Launched
+1252,3353,MoA,Preclinical
+228,3353,MoA,Preclinical
+3276,3353,MoA,Preclinical
+507,3353,MoA,Preclinical
+881,3353,MoA,Preclinical
+3354,3353,MoA,Preclinical
+1770,3353,MoA,Preclinical
+1280,3353,MoA,Preclinical
+179,3353,MoA,Preclinical
+423,3551,MoA,Preclinical
+3709,3710,MoA,Launched
+3711,3710,MoA,Launched
+2235,3710,MoA,Launched
+983,3710,MoA,Launched
+985,3710,MoA,Launched
+1001,3710,MoA,Launched
+3712,3710,MoA,Launched
+3713,3710,MoA,Launched
+3714,3710,MoA,Launched
+3715,3710,MoA,Launched
+3716,3710,MoA,Launched
+3717,3710,MoA,Launched
+1006,3710,MoA,Launched
+3718,3710,MoA,Launched
+314,3725,MoA,Phase 3
+3726,3725,MoA,Phase 3
+3727,3725,MoA,Phase 3
+3728,3725,MoA,Phase 3
+3729,3725,MoA,Phase 3
+3730,3725,MoA,Phase 3
+3769,3770,MoA,Launched
+3771,3770,MoA,Launched
+214,3770,MoA,Launched
+3772,3770,MoA,Launched
+3776,3808,MoA,Phase 3
+3777,3808,MoA,Phase 3
+3809,3808,MoA,Phase 3
+3810,3808,MoA,Phase 3
+3811,3808,MoA,Phase 3
+3812,3808,MoA,Phase 3
+3843,3844,MoA,Phase 2
+3845,3844,MoA,Phase 2
+3846,3844,MoA,Phase 2
+3978,3979,MoA,Preclinical
+580,4092,MoA,Launched
+3773,4118,MoA,Phase 3
+2235,4118,MoA,Phase 3
+983,4118,MoA,Phase 3
+985,4118,MoA,Phase 3
+986,4118,MoA,Phase 3
+3721,4118,MoA,Phase 3
+3776,4118,MoA,Phase 3
+3777,4118,MoA,Phase 3
+3758,4118,MoA,Phase 3
+2246,4118,MoA,Phase 3
+3778,4118,MoA,Phase 3
+3760,4118,MoA,Phase 3
+3761,4118,MoA,Phase 3
+1167,4118,MoA,Phase 3
+3785,4118,MoA,Phase 3
+3786,4118,MoA,Phase 3
+3787,4118,MoA,Phase 3
+4119,4118,MoA,Phase 3
+991,4118,MoA,Phase 3
+993,4118,MoA,Phase 3
+3740,4118,MoA,Phase 3
+3741,4118,MoA,Phase 3
+3712,4118,MoA,Phase 3
+3713,4118,MoA,Phase 3
+4120,4118,MoA,Phase 3
+4121,4118,MoA,Phase 3
+3714,4118,MoA,Phase 3
+4122,4118,MoA,Phase 3
+3715,4118,MoA,Phase 3
+4123,4118,MoA,Phase 3
+2626,4118,MoA,Phase 3
+4124,4118,MoA,Phase 3
+4125,4118,MoA,Phase 3
+3716,4118,MoA,Phase 3
+4126,4118,MoA,Phase 3
+3838,4118,MoA,Phase 3
+3800,4118,MoA,Phase 3
+4127,4118,MoA,Phase 3
+293,4118,MoA,Phase 3
+262,4118,MoA,Phase 3
+4128,4118,MoA,Phase 3
+4129,4118,MoA,Phase 3
+4130,4118,MoA,Phase 3
+4131,4118,MoA,Phase 3
+4132,4118,MoA,Phase 3
+1003,4118,MoA,Phase 3
+1004,4118,MoA,Phase 3
+4133,4118,MoA,Phase 3
+4134,4118,MoA,Phase 3
+4135,4118,MoA,Phase 3
+4136,4118,MoA,Phase 3
+3806,4118,MoA,Phase 3
+3846,4118,MoA,Phase 3
+423,4193,MoA,Launched
+3452,4206,MoA,Launched
+377,4222,MoA,Launched
+4408,4409,MoA,Phase 2/Phase 3
+4410,4409,MoA,Phase 2/Phase 3
+4411,4409,MoA,Phase 2/Phase 3
+4412,4409,MoA,Phase 2/Phase 3
+4413,4409,MoA,Phase 2/Phase 3
+4414,4409,MoA,Phase 2/Phase 3
+4415,4409,MoA,Phase 2/Phase 3
+4416,4409,MoA,Phase 2/Phase 3
+7,4425,MoA,Preclinical
+8,4425,MoA,Preclinical
+9,4425,MoA,Preclinical
+687,4425,MoA,Preclinical
+14,4425,MoA,Preclinical
+16,4425,MoA,Preclinical
+217,4446,MoA,Phase 1
+4447,4446,MoA,Phase 1
+1609,4567,MoA,Phase 3
+174,4632,MoA,Preclinical
+1404,4704,MoA,Phase 2
+186,4768,MoA,Phase 3
+188,4768,MoA,Phase 3
+1616,4768,MoA,Phase 3
+1617,4768,MoA,Phase 3
+3806,5014,MoA,Phase 2
+4247,5014,MoA,Phase 2
+5015,5014,MoA,Phase 2
+5016,5014,MoA,Phase 2
+205,5104,MoA,Preclinical
+507,5261,MoA,Phase 1
+5263,5264,MoA,Preclinical
+1974,5269,MoA,Launched
+1404,5269,MoA,Launched
+2686,5269,MoA,Launched
+5270,5269,MoA,Launched
+5271,5269,MoA,Launched
+2015,5269,MoA,Launched
+1287,5269,MoA,Launched
+4126,5269,MoA,Launched
+2936,5269,MoA,Launched
+5272,5269,MoA,Launched
+5268,5269,MoA,Launched
+5273,5269,MoA,Launched
+1705,5269,MoA,Launched
+4833,5388,MoA,Phase 1
+3763,5388,MoA,Phase 1
+45,5600,MoA,Preclinical
+7,5600,MoA,Preclinical
+339,5601,MoA,Preclinical
+2602,5607,MoA,Launched
+187,5634,MoA,Preclinical
+190,5634,MoA,Preclinical
+1616,5634,MoA,Preclinical
+1617,5634,MoA,Preclinical
+1530,5634,MoA,Preclinical
+153,5634,MoA,Preclinical
+154,5634,MoA,Preclinical
+794,5634,MoA,Preclinical
+2626,5634,MoA,Preclinical
+5635,5634,MoA,Preclinical
+5636,5634,MoA,Preclinical
+280,5634,MoA,Preclinical
+2953,5634,MoA,Preclinical
+1967,5684,MoA,Launched
+3736,5684,MoA,Launched
+4173,5684,MoA,Launched
+5685,5684,MoA,Launched
+5686,5684,MoA,Launched
+5687,5684,MoA,Launched
+3827,5684,MoA,Launched
+3828,5684,MoA,Launched
+3829,5684,MoA,Launched
+3830,5684,MoA,Launched
+3831,5684,MoA,Launched
+5688,5684,MoA,Launched
+5689,5684,MoA,Launched
+5690,5684,MoA,Launched
+5691,5684,MoA,Launched
+5692,5684,MoA,Launched
+3347,5684,MoA,Launched
+5693,5684,MoA,Launched
+5694,5684,MoA,Launched
+5695,5684,MoA,Launched
+5696,5684,MoA,Launched
+5697,5684,MoA,Launched
+5698,5684,MoA,Launched
+5699,5684,MoA,Launched
+5700,5684,MoA,Launched
+5701,5684,MoA,Launched
+3890,5707,MoA,Launched
+5708,5707,MoA,Launched
+5709,5707,MoA,Launched
+824,5707,MoA,Launched
+2981,5901,MoA,Launched
+5146,6067,MoA,Launched
+6068,6067,MoA,Launched
+6069,6067,MoA,Launched
+6070,6067,MoA,Launched
+4953,6067,MoA,Launched
+2686,6148,MoA,Launched
+6149,6148,MoA,Launched
+293,6155,MoA,Phase 3
+2235,6191,MoA,Preclinical
+1967,6191,MoA,Preclinical
+255,6422,MoA,Phase 2
+5990,6422,MoA,Phase 2
+1562,6437,MoA,Phase 2
+1564,6437,MoA,Phase 2
+1565,6437,MoA,Phase 2
+1566,6437,MoA,Phase 2
+1567,6437,MoA,Phase 2
+1568,6437,MoA,Phase 2
+1569,6437,MoA,Phase 2
+1570,6437,MoA,Phase 2
+1571,6437,MoA,Phase 2
+1572,6437,MoA,Phase 2
+1573,6437,MoA,Phase 2
+1574,6437,MoA,Phase 2
+1575,6437,MoA,Phase 2
+1576,6437,MoA,Phase 2
+1577,6437,MoA,Phase 2
+1578,6437,MoA,Phase 2
+1579,6437,MoA,Phase 2
+1580,6437,MoA,Phase 2
+1581,6437,MoA,Phase 2
+1582,6437,MoA,Phase 2
+1583,6437,MoA,Phase 2
+3134,6465,MoA,Phase 1
+6473,6474,MoA,Preclinical
+6490,6491,MoA,Preclinical
+6492,6491,MoA,Preclinical
+1161,6491,MoA,Preclinical
+6502,6503,MoA,Preclinical
+6504,6503,MoA,Preclinical
+6505,6503,MoA,Preclinical
+6506,6503,MoA,Preclinical
+469,6523,MoA,Preclinical
+2520,6538,MoA,Preclinical
+2596,6565,MoA,Preclinical
+2887,6565,MoA,Preclinical

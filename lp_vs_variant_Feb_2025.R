@@ -1,22 +1,18 @@
 
+
 library(dplyr)
 rm(list = ls())
+
 args = commandArgs(trailingOnly=TRUE)
 lp_path <- args[1]
 variant_path <- args[2]
-rsid <-  args[3]
+
 
 root_output <- "LP_output_local"
 dir.create(root_output)
 
 lp <- read.csv(lp_path)
 variants <- read.csv(variant_path)
-if (!rsid %in% colnames(variants)){
-  writeLines(sprintf("%s does not exists!", rsid))
-  quit(save = "no", status = 1, runLast = TRUE)
-}
-variants <- select(variants, c("ID", rsid))
-colnames(variants) <- c("ID", "CurrRSID")
 colnames(variants) <- paste("Metadata_variant", colnames(variants), sep = "_")
 df <- merge(lp, variants, by.x = "Metadata_donor", by.y="Metadata_variant_ID", all.x = T)
 
@@ -69,28 +65,38 @@ process_gene_var_pair <- function(merged){
 }
 
 meta <- select(df, colnames(df)[grepl("Metadata", colnames(df))])
+meta_vars <- select(df, colnames(df)[grepl("Metadata_variant", colnames(df))])
 lps <- select(df, -colnames(df)[grepl("Metadata", colnames(df))])
 a_feat <- colnames(lps)[1]
 first <- T
-for (a_feat in colnames(lps)){
-  curr_data <- select(df, c("Metadata_donor", a_feat, "Metadata_variant_CurrRSID"))
-  
-  if (nrow(curr_data) != nrow(curr_data[which(complete.cases(curr_data)),])){
-    curr_data <- curr_data[which(complete.cases(curr_data)),]
-  }
-  
-  out <- process_gene_var_pair(curr_data)
-  if (nrow(out) > 0){
-    out$SNP <- rsid
-    out$LP <- a_feat
-    out$File <- basename(lp_path)
-    if (first){
-      first <- F
-      overall_report <- out
-    }else{
-      overall_report <- rbind(out, overall_report)
-    }            
-  }
+a_var <- colnames(meta_vars)[1]
+for (a_var in colnames(meta_vars)){
+  for (a_feat in colnames(lps)){
+    curr_data <- select(df, c("Metadata_donor", a_feat, a_var))
+    
+    if (nrow(curr_data) != nrow(curr_data[which(complete.cases(curr_data)),])){
+      curr_data <- curr_data[which(complete.cases(curr_data)),]
+    }
+    
+    out <- process_gene_var_pair(curr_data)
+    if (nrow(out) > 0){
+      out$SNP <- a_var
+      out$LP <- a_feat
+      out$File <- basename(lp_path)
+      if (first){
+        first <- F
+        overall_report <- out
+      }else{
+        overall_report <- rbind(out, overall_report)
+      }            
+    }
+  }  
 }
 
+
 write.csv(overall_report, sprintf('%s/overall_report.csv', root_output), row.names = F)
+
+
+
+
+

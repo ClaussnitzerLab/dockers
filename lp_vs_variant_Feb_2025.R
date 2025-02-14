@@ -6,6 +6,7 @@ rm(list = ls())
 args = commandArgs(trailingOnly=TRUE)
 lp_path <- args[1]
 variant_path <- args[2]
+rsid <- args[3]
 
 
 root_output <- "LP_output_local"
@@ -13,6 +14,7 @@ dir.create(root_output)
 
 lp <- read.csv(lp_path)
 variants <- read.csv(variant_path)
+variants <- select(variants, c("ID", rsid))
 colnames(variants) <- paste("Metadata_variant", colnames(variants), sep = "_")
 df <- merge(lp, variants, by.x = "Metadata_donor", by.y="Metadata_variant_ID", all.x = T)
 

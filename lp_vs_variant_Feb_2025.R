@@ -9,7 +9,7 @@ variant_path <- args[2]
 rsid <- args[3]
 
 
-root_output <- "LP_output_local"
+root_output <- "LP_output"
 dir.create(root_output)
 
 lp <- read.csv(lp_path)

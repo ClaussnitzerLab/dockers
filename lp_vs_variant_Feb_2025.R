@@ -17,6 +17,8 @@ variants <- read.csv(variant_path)
 variants <- select(variants, c("ID", rsid))
 colnames(variants) <- paste("Metadata_variant", colnames(variants), sep = "_")
 df <- merge(lp, variants, by.x = "Metadata_donor", by.y="Metadata_variant_ID", all.x = T)
+df_snp <- select(df, c("Metadata_donor", sprintf("Metadata_variant_%s", rsid)))
+write.csv(df_snp, sprintf('%s/df_snp.csv', root_output), row.names = F)
 
 compare_alleles <- function(merged, all1, all2){
   # 00 vs 11
@@ -72,6 +74,7 @@ lps <- select(df, -colnames(df)[grepl("Metadata", colnames(df))])
 a_feat <- colnames(lps)[1]
 first <- T
 a_var <- colnames(meta_vars)[1]
+overall_report <- data.frame(matrix(nrow = 0, ncol = 2))
 for (a_var in colnames(meta_vars)){
   for (a_feat in colnames(lps)){
     curr_data <- select(df, c("Metadata_donor", a_feat, a_var))
@@ -97,7 +100,6 @@ for (a_var in colnames(meta_vars)){
 
 
 write.csv(overall_report, sprintf('%s/overall_report.csv', root_output), row.names = F)
-
 
 
 

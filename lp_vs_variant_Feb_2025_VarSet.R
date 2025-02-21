@@ -16,7 +16,8 @@ lp <- read.csv(lp_path)
 variants <- read.csv(variant_path)
 
 colnames(variants) <- paste("Metadata_variant", colnames(variants), sep = "_")
-colnames(variants)[grepl("ID", colnames(variants))]
+writeLines(sprintf("%s", paste(colnames(variants)[grepl("ID", colnames(variants))], collapse = ";")))
+
 df <- merge(lp, variants, by.x = "Metadata_donor", by.y="Metadata_variant_ID", all.x = T)
 df_snp <- select(df, c("Metadata_donor", colnames(variants)))
 write.csv(df_snp, sprintf('%s/df_snp.csv', root_output), row.names = F)

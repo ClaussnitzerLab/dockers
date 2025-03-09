@@ -1,0 +1,5 @@
+FromID,ToID,Relation_value,Relation_type,Relation_Context_ClinicalPhase
+169,170,histamine receptor antagonist,MoA,Launched
+171,172,GABA benzodiazepine site receptor inverse agonist,MoA,Preclinical
+173,174,acetylcholine receptor agonist,MoA,Phase 2
+191,192,IGF-1 inhibitor,MoA,Preclinical

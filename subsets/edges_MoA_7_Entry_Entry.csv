@@ -1,0 +1,2 @@
+FromID,ToID,Relation_type,Relation_Context_ClinicalPhase,FromType,ToType
+175,176,MoA,Phase 3,Gene,Chemical Compound

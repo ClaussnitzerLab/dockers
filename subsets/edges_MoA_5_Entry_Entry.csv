@@ -1,0 +1,3 @@
+FromID,ToID,Relation_value,Relation_type,Relation_Context_ClinicalPhase,Relation_Context_DiseaseArea,Relation_Context_Indication,FromType,ToType
+179,180,EGFR inhibitor|RET tyrosine kinase inhibitor|VEGFR inhibitor,MoA,Launched,oncology,medullary thyroid cancer (MTC),Gene,Chemical Compound
+196,197,norepinephrine reuptake inhibitor|serotonin–norepinephrine reuptake inhibitor (SNRI),MoA,Launched,neurology/psychiatry,depression|generalized anxiety disorder (GAD)|muscle pain|peripheral neuropathy,Gene,Chemical Compound

@@ -1,0 +1,5 @@
+FromID,ToID,Relation_value,Relation_type,Relation_Context_ClinicalPhase,FromType,ToType
+169,170,histamine receptor antagonist,MoA,Launched,Gene,Chemical Compound
+171,172,GABA benzodiazepine site receptor inverse agonist,MoA,Preclinical,Gene,Chemical Compound
+173,174,acetylcholine receptor agonist,MoA,Phase 2,Gene,Chemical Compound
+191,192,IGF-1 inhibitor,MoA,Preclinical,Gene,Chemical Compound

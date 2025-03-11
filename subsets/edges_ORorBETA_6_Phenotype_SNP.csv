@@ -1,4 +1,0 @@
-FromID,ToID,Relation_type,FromType,ToType
-95,479,ORorBETA,Phenotype,SNP
-76,533,ORorBETA,Phenotype,SNP
-15,544,ORorBETA,Phenotype,SNP

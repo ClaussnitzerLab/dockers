@@ -1,3 +1,0 @@
-FromID,ToID,Relation_value,Relation_type,Relation_Context_CellType,Relation_Context_DiffDay,FromType,ToType
-60,61,-0.4747464021,wilcox_effsize,hWAT,D14,LipocyteProfiler_Feature,Gene
-82,61,-0.4148684775,wilcox_effsize,hWAT,D08,LipocyteProfiler_Feature,Gene

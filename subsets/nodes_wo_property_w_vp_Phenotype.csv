@@ -6,7 +6,7 @@ Id,Name,Type,VectorableProperty
 10,Beta_Cell_1,Phenotype,Beta_Cell_1
 12,Bilirubin,Phenotype,Bilirubin
 14,Vatadjbmi,Phenotype,Vatadjbmi
-15,Hdl,Phenotype,Hdl
+15,Hdl,Phenotype,HDL
 17,Insulin Fold Change Adj Bmi,Phenotype,Insulin Fold Change Adj Bmi
 20,T1D,Phenotype,T1D
 21,Proinsulin,Phenotype,Proinsulin
@@ -17,13 +17,13 @@ Id,Name,Type,VectorableProperty
 36,Obesity,Phenotype,Obesity
 56,Hyper_Insulin,Phenotype,Hyper_Insulin
 58,T2D 2024,Phenotype,T2D 2024
-62,Ldl,Phenotype,Ldl
+62,Ldl,Phenotype,LDL
 63,Beta_Cell_2,Phenotype,Beta_Cell_2
 66,Fastinginsulin,Phenotype,Fastinginsulin
 76,T2D,Phenotype,T2D
 95,Fasting Blood Insulin,Phenotype,Fasting Blood Insulin
 105,Homair,Phenotype,Homair
 108,Handedness,Phenotype,Handedness
-220,Bmi,Phenotype,Bmi
+220,Bmi,Phenotype,BMI
 278,Insulin Sensitivity Index Adj Bmi,Phenotype,Insulin Sensitivity Index Adj Bmi
 570,LTBP2,Phenotype,LTBP2

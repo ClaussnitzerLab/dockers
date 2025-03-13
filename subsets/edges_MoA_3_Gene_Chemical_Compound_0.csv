@@ -1,0 +1,82 @@
+FromID,ToID,Relation_type,Relation_Context_ClinicalPhase,Relation_Context_DiseaseArea,Relation_Context_Indication,FromType,ToType
+25861,25862,MoA,Launched,dermatology,xerosis cutis|ichthyosis vulgaris,Gene,Chemical_Compound
+26239,26240,MoA,Launched,gastroenterology,pancreas diagnostic agent,Gene,Chemical_Compound
+6039,26682,MoA,Launched,endocrinology,vitamin D deficiency,Gene,Chemical_Compound
+11306,27431,MoA,Launched,endocrinology,contraceptive,Gene,Chemical_Compound
+25719,27431,MoA,Launched,endocrinology,contraceptive,Gene,Chemical_Compound
+11929,27551,MoA,Launched,endocrinology,Addison's disease|adrenogenital syndrome,Gene,Chemical_Compound
+25632,27563,MoA,Launched,ophthalmology,ophthalmology diagnostic,Gene,Chemical_Compound
+14022,27565,MoA,Launched,ophthalmology,eye inflammation,Gene,Chemical_Compound
+9273,27910,MoA,Launched,rheumatology|urology,osteoarthritis|interstitial cystitis (IC),Gene,Chemical_Compound
+4104,27910,MoA,Launched,rheumatology|urology,osteoarthritis|interstitial cystitis (IC),Gene,Chemical_Compound
+27911,27910,MoA,Launched,rheumatology|urology,osteoarthritis|interstitial cystitis (IC),Gene,Chemical_Compound
+27912,27910,MoA,Launched,rheumatology|urology,osteoarthritis|interstitial cystitis (IC),Gene,Chemical_Compound
+4973,27910,MoA,Launched,rheumatology|urology,osteoarthritis|interstitial cystitis (IC),Gene,Chemical_Compound
+27913,27910,MoA,Launched,rheumatology|urology,osteoarthritis|interstitial cystitis (IC),Gene,Chemical_Compound
+15446,27910,MoA,Launched,rheumatology|urology,osteoarthritis|interstitial cystitis (IC),Gene,Chemical_Compound
+26156,27910,MoA,Launched,rheumatology|urology,osteoarthritis|interstitial cystitis (IC),Gene,Chemical_Compound
+27914,27910,MoA,Launched,rheumatology|urology,osteoarthritis|interstitial cystitis (IC),Gene,Chemical_Compound
+7323,27910,MoA,Launched,rheumatology|urology,osteoarthritis|interstitial cystitis (IC),Gene,Chemical_Compound
+4438,28222,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis,Gene,Chemical_Compound
+9162,28222,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis,Gene,Chemical_Compound
+28223,28222,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis,Gene,Chemical_Compound
+28224,28222,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis,Gene,Chemical_Compound
+7020,28222,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis,Gene,Chemical_Compound
+14625,28222,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis,Gene,Chemical_Compound
+13263,28222,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis,Gene,Chemical_Compound
+13524,28222,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis,Gene,Chemical_Compound
+7571,28222,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis,Gene,Chemical_Compound
+12988,28222,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis,Gene,Chemical_Compound
+4560,28222,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis,Gene,Chemical_Compound
+4435,28222,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis,Gene,Chemical_Compound
+14962,28222,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis,Gene,Chemical_Compound
+4299,28222,MoA,Launched,rheumatology,osteoarthritis|rheumatoid arthritis,Gene,Chemical_Compound
+2432,28247,MoA,Launched,gastroenterology|dental|neurology/psychiatry|rheumatology,diarrhea|mucositis|muscle pain|joint pain|peptic ulcer disease (PUD)|ulcerative colitis|Crohn's disease|anxiety|insomnia,Gene,Chemical_Compound
+13666,28247,MoA,Launched,gastroenterology|dental|neurology/psychiatry|rheumatology,diarrhea|mucositis|muscle pain|joint pain|peptic ulcer disease (PUD)|ulcerative colitis|Crohn's disease|anxiety|insomnia,Gene,Chemical_Compound
+26107,28247,MoA,Launched,gastroenterology|dental|neurology/psychiatry|rheumatology,diarrhea|mucositis|muscle pain|joint pain|peptic ulcer disease (PUD)|ulcerative colitis|Crohn's disease|anxiety|insomnia,Gene,Chemical_Compound
+6732,28247,MoA,Launched,gastroenterology|dental|neurology/psychiatry|rheumatology,diarrhea|mucositis|muscle pain|joint pain|peptic ulcer disease (PUD)|ulcerative colitis|Crohn's disease|anxiety|insomnia,Gene,Chemical_Compound
+12506,28343,MoA,Launched,endocrinology,carnitine deficiency,Gene,Chemical_Compound
+7354,28343,MoA,Launched,endocrinology,carnitine deficiency,Gene,Chemical_Compound
+25756,28349,MoA,Launched,neurology/psychiatry,pain relief,Gene,Chemical_Compound
+10521,28349,MoA,Launched,neurology/psychiatry,pain relief,Gene,Chemical_Compound
+25901,28349,MoA,Launched,neurology/psychiatry,pain relief,Gene,Chemical_Compound
+28350,28349,MoA,Launched,neurology/psychiatry,pain relief,Gene,Chemical_Compound
+25528,28374,MoA,Launched,infectious disease,scabies,Gene,Chemical_Compound
+6267,28374,MoA,Launched,infectious disease,scabies,Gene,Chemical_Compound
+2983,28374,MoA,Launched,infectious disease,scabies,Gene,Chemical_Compound
+26103,28374,MoA,Launched,infectious disease,scabies,Gene,Chemical_Compound
+7644,28374,MoA,Launched,infectious disease,scabies,Gene,Chemical_Compound
+25966,28569,MoA,Launched,dermatology,skin depigmentation,Gene,Chemical_Compound
+25719,28891,MoA,Launched,endocrinology,contraceptive,Gene,Chemical_Compound
+10661,29218,MoA,Preclinical,otolaryngology,pharyngitis,Gene,Chemical_Compound
+7468,29218,MoA,Preclinical,otolaryngology,pharyngitis,Gene,Chemical_Compound
+25559,29218,MoA,Preclinical,otolaryngology,pharyngitis,Gene,Chemical_Compound
+25560,29218,MoA,Preclinical,otolaryngology,pharyngitis,Gene,Chemical_Compound
+25561,29218,MoA,Preclinical,otolaryngology,pharyngitis,Gene,Chemical_Compound
+26566,29218,MoA,Preclinical,otolaryngology,pharyngitis,Gene,Chemical_Compound
+28556,29238,MoA,Launched,hematology,vitamin K deficiency|anticoagulation reversal,Gene,Chemical_Compound
+15068,29238,MoA,Launched,hematology,vitamin K deficiency|anticoagulation reversal,Gene,Chemical_Compound
+26187,29249,MoA,Launched,dermatology,xerosis cutis,Gene,Chemical_Compound
+29250,29249,MoA,Launched,dermatology,xerosis cutis,Gene,Chemical_Compound
+25540,29249,MoA,Launched,dermatology,xerosis cutis,Gene,Chemical_Compound
+13032,29249,MoA,Launched,dermatology,xerosis cutis,Gene,Chemical_Compound
+14584,29249,MoA,Launched,dermatology,xerosis cutis,Gene,Chemical_Compound
+26313,29249,MoA,Launched,dermatology,xerosis cutis,Gene,Chemical_Compound
+29251,29249,MoA,Launched,dermatology,xerosis cutis,Gene,Chemical_Compound
+29252,29249,MoA,Launched,dermatology,xerosis cutis,Gene,Chemical_Compound
+29253,29249,MoA,Launched,dermatology,xerosis cutis,Gene,Chemical_Compound
+29254,29249,MoA,Launched,dermatology,xerosis cutis,Gene,Chemical_Compound
+29255,29249,MoA,Launched,dermatology,xerosis cutis,Gene,Chemical_Compound
+6933,29424,MoA,Launched,dermatology,psoriasis|eczema|vitiligo,Gene,Chemical_Compound
+7546,29424,MoA,Launched,dermatology,psoriasis|eczema|vitiligo,Gene,Chemical_Compound
+4229,29440,MoA,Launched,neurology/psychiatry,epilepsy,Gene,Chemical_Compound
+25603,29858,MoA,Launched,dental,cavities,Gene,Chemical_Compound
+28559,29861,MoA,Launched,dermatology,varicose veins,Gene,Chemical_Compound
+29931,29932,MoA,Launched,neurology/psychiatry,muscle relaxant,Gene,Chemical_Compound
+25476,29932,MoA,Launched,neurology/psychiatry,muscle relaxant,Gene,Chemical_Compound
+25477,29932,MoA,Launched,neurology/psychiatry,muscle relaxant,Gene,Chemical_Compound
+25478,29932,MoA,Launched,neurology/psychiatry,muscle relaxant,Gene,Chemical_Compound
+25630,29932,MoA,Launched,neurology/psychiatry,muscle relaxant,Gene,Chemical_Compound
+26666,29932,MoA,Launched,neurology/psychiatry,muscle relaxant,Gene,Chemical_Compound
+11513,30154,MoA,Launched,ophthalmology,contact dermatitis,Gene,Chemical_Compound
+25632,30673,MoA,Launched,nephrology,renal diagnostic agent,Gene,Chemical_Compound

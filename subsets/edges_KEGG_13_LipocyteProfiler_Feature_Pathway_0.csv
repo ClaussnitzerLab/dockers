@@ -1,0 +1,7 @@
+FromID,ToID,Relation_type,Relation_Context_CellType,Relation_Context_DiffDay,Relation_Context_Depot,Relation_Context_Stimulation,FromType,ToType
+675,2493,KEGG,AMSC,D14,vc,nonFFA,LipocyteProfiler_Feature,Pathway
+17,2493,KEGG,AMSC,D14,vc,nonFFA,LipocyteProfiler_Feature,Pathway
+2204,2493,KEGG,AMSC,D14,sc,nonFFA,LipocyteProfiler_Feature,Pathway
+964,2504,KEGG,AMSC,D14,sc,nonFFA,LipocyteProfiler_Feature,Pathway
+25,2493,KEGG,AMSC,D14,sc,nonFFA,LipocyteProfiler_Feature,Pathway
+40,2504,KEGG,AMSC,D14,sc,nonFFA,LipocyteProfiler_Feature,Pathway

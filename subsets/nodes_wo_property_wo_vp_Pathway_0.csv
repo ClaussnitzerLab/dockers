@@ -1,0 +1,88 @@
+Id,Name,Type
+2418,developmental process,Pathway
+2419,anatomical structure development,Pathway
+2420,multicellular organismal process,Pathway
+2421,multicellular organism development,Pathway
+2422,system development,Pathway
+2423,cellular developmental process,Pathway
+2424,cell differentiation,Pathway
+2425,positive regulation of biological process,Pathway
+2426,positive regulation of cellular process,Pathway
+2427,plasma membrane,Pathway
+2428,cell periphery,Pathway
+2429,negative regulation of biological process,Pathway
+2430,negative regulation of cellular process,Pathway
+2431,regulation of macromolecule metabolic process,Pathway
+2432,regulation of primary metabolic process,Pathway
+2433,regulation of biological process,Pathway
+2434,biological regulation,Pathway
+2435,regulation of metabolic process,Pathway
+2436,regulation of macromolecule biosynthetic process,Pathway
+2437,regulation of cellular process,Pathway
+2438,regulation of gene expression,Pathway
+2439,protein binding,Pathway
+2440,membrane,Pathway
+2441,cellular process,Pathway
+2442,organelle,Pathway
+2443,membrane-bounded organelle,Pathway
+2444,intracellular organelle,Pathway
+2445,intracellular membrane-bounded organelle,Pathway
+2446,intracellular anatomical structure,Pathway
+2447,cell communication,Pathway
+2448,signal transduction,Pathway
+2449,signaling,Pathway
+2450,cellular response to stimulus,Pathway
+2451,regulation of biosynthetic process,Pathway
+2452,macromolecule biosynthetic process,Pathway
+2453,biosynthetic process,Pathway
+2454,primary metabolic process,Pathway
+2455,metabolic process,Pathway
+2456,gene expression,Pathway
+2457,RNA metabolic process,Pathway
+2458,RNA biosynthetic process,Pathway
+2459,nucleic acid biosynthetic process,Pathway
+2460,nucleobase-containing compound biosynthetic process,Pathway
+2461,macromolecule metabolic process,Pathway
+2462,nucleic acid metabolic process,Pathway
+2463,nucleobase-containing compound metabolic process,Pathway
+2464,cellular component organization or biogenesis,Pathway
+2465,membrane-enclosed lumen,Pathway
+2466,intracellular organelle lumen,Pathway
+2467,organelle lumen,Pathway
+2468,cytoplasm,Pathway
+2469,nuclear lumen,Pathway
+2470,nucleoplasm,Pathway
+2471,cytosol,Pathway
+2472,membraneless organelle,Pathway
+2473,intracellular membraneless organelle,Pathway
+2474,nucleus,Pathway
+2475,protein-containing complex,Pathway
+2476,organic cyclic compound binding,Pathway
+2477,binding,Pathway
+2478,catalytic activity,Pathway
+2479,localization,Pathway
+2480,Metabolism,Pathway
+2481,regulation of nucleobase-containing compound metabolic process,Pathway
+2482,cellular component organization,Pathway
+2483,nucleic acid binding,Pathway
+2484,response to stimulus,Pathway
+2485,Signal Transduction,Pathway
+2486,organelle organization,Pathway
+2487,endomembrane system,Pathway
+2488,cell cycle,Pathway
+2489,Cell Cycle,Pathway
+2490,transmembrane signaling receptor activity,Pathway
+2491,signaling receptor activity,Pathway
+2492,molecular transducer activity,Pathway
+2493,Metabolic pathways,Pathway
+2494,cell cycle process,Pathway
+2495,mitotic cell cycle,Pathway
+2496,"Cell Cycle, Mitotic",Pathway
+2497,protein metabolic process,Pathway
+2498,cellular anatomical structure,Pathway
+2499,mitotic cell cycle process,Pathway
+2500,regulation of cell cycle,Pathway
+2501,chromosome,Pathway
+2502,extracellular region,Pathway
+2503,Metabolism of proteins,Pathway
+2504,Olfactory transduction,Pathway

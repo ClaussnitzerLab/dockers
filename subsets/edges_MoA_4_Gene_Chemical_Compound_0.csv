@@ -1,0 +1,481 @@
+FromID,ToID,Relation_type,Relation_Context_ClinicalPhase,FromType,ToType
+7230,25640,MoA,Phase 3,Gene,Chemical_Compound
+25641,25640,MoA,Phase 3,Gene,Chemical_Compound
+25642,25640,MoA,Phase 3,Gene,Chemical_Compound
+7640,26040,MoA,Phase 1/Phase 2,Gene,Chemical_Compound
+26071,26072,MoA,Phase 1,Gene,Chemical_Compound
+26101,26102,MoA,Launched,Gene,Chemical_Compound
+6190,26102,MoA,Launched,Gene,Chemical_Compound
+26315,26316,MoA,Phase 3,Gene,Chemical_Compound
+26317,26316,MoA,Phase 3,Gene,Chemical_Compound
+26075,26316,MoA,Phase 3,Gene,Chemical_Compound
+25779,26316,MoA,Phase 3,Gene,Chemical_Compound
+11393,26316,MoA,Phase 3,Gene,Chemical_Compound
+26029,26316,MoA,Phase 3,Gene,Chemical_Compound
+26318,26316,MoA,Phase 3,Gene,Chemical_Compound
+26319,26316,MoA,Phase 3,Gene,Chemical_Compound
+7230,26335,MoA,Preclinical,Gene,Chemical_Compound
+15875,26354,MoA,Phase 1,Gene,Chemical_Compound
+10748,26651,MoA,Preclinical,Gene,Chemical_Compound
+7555,26651,MoA,Preclinical,Gene,Chemical_Compound
+25646,26651,MoA,Preclinical,Gene,Chemical_Compound
+25647,26651,MoA,Preclinical,Gene,Chemical_Compound
+26652,26651,MoA,Preclinical,Gene,Chemical_Compound
+26653,26651,MoA,Preclinical,Gene,Chemical_Compound
+15412,26770,MoA,Preclinical,Gene,Chemical_Compound
+10833,26830,MoA,Preclinical,Gene,Chemical_Compound
+15382,26906,MoA,Launched,Gene,Chemical_Compound
+12593,26906,MoA,Launched,Gene,Chemical_Compound
+4546,26906,MoA,Launched,Gene,Chemical_Compound
+14586,26906,MoA,Launched,Gene,Chemical_Compound
+6599,26906,MoA,Launched,Gene,Chemical_Compound
+13333,26906,MoA,Launched,Gene,Chemical_Compound
+4710,26906,MoA,Launched,Gene,Chemical_Compound
+26907,26906,MoA,Launched,Gene,Chemical_Compound
+6861,26908,MoA,Phase 2,Gene,Chemical_Compound
+7886,26908,MoA,Phase 2,Gene,Chemical_Compound
+26909,26908,MoA,Phase 2,Gene,Chemical_Compound
+6587,26908,MoA,Phase 2,Gene,Chemical_Compound
+26771,26908,MoA,Phase 2,Gene,Chemical_Compound
+3230,26908,MoA,Phase 2,Gene,Chemical_Compound
+8835,26908,MoA,Phase 2,Gene,Chemical_Compound
+26910,26908,MoA,Phase 2,Gene,Chemical_Compound
+2742,26908,MoA,Phase 2,Gene,Chemical_Compound
+9968,26908,MoA,Phase 2,Gene,Chemical_Compound
+9969,26908,MoA,Phase 2,Gene,Chemical_Compound
+2789,26908,MoA,Phase 2,Gene,Chemical_Compound
+26911,26908,MoA,Phase 2,Gene,Chemical_Compound
+26912,26908,MoA,Phase 2,Gene,Chemical_Compound
+7552,26908,MoA,Phase 2,Gene,Chemical_Compound
+5705,26908,MoA,Phase 2,Gene,Chemical_Compound
+12175,26908,MoA,Phase 2,Gene,Chemical_Compound
+4215,26908,MoA,Phase 2,Gene,Chemical_Compound
+26913,26908,MoA,Phase 2,Gene,Chemical_Compound
+13469,26908,MoA,Phase 2,Gene,Chemical_Compound
+26914,26908,MoA,Phase 2,Gene,Chemical_Compound
+26915,26908,MoA,Phase 2,Gene,Chemical_Compound
+11189,26908,MoA,Phase 2,Gene,Chemical_Compound
+26916,26908,MoA,Phase 2,Gene,Chemical_Compound
+26917,26908,MoA,Phase 2,Gene,Chemical_Compound
+2650,26908,MoA,Phase 2,Gene,Chemical_Compound
+26918,26908,MoA,Phase 2,Gene,Chemical_Compound
+5455,26908,MoA,Phase 2,Gene,Chemical_Compound
+11361,26908,MoA,Phase 2,Gene,Chemical_Compound
+8154,26908,MoA,Phase 2,Gene,Chemical_Compound
+6730,26908,MoA,Phase 2,Gene,Chemical_Compound
+7107,26908,MoA,Phase 2,Gene,Chemical_Compound
+8585,26908,MoA,Phase 2,Gene,Chemical_Compound
+25581,26908,MoA,Phase 2,Gene,Chemical_Compound
+26919,26908,MoA,Phase 2,Gene,Chemical_Compound
+6112,26908,MoA,Phase 2,Gene,Chemical_Compound
+10895,26908,MoA,Phase 2,Gene,Chemical_Compound
+2843,26908,MoA,Phase 2,Gene,Chemical_Compound
+3311,26908,MoA,Phase 2,Gene,Chemical_Compound
+6815,26908,MoA,Phase 2,Gene,Chemical_Compound
+13793,26908,MoA,Phase 2,Gene,Chemical_Compound
+26920,26908,MoA,Phase 2,Gene,Chemical_Compound
+11430,26908,MoA,Phase 2,Gene,Chemical_Compound
+26921,26908,MoA,Phase 2,Gene,Chemical_Compound
+14311,26908,MoA,Phase 2,Gene,Chemical_Compound
+6054,26908,MoA,Phase 2,Gene,Chemical_Compound
+5855,26908,MoA,Phase 2,Gene,Chemical_Compound
+9642,26908,MoA,Phase 2,Gene,Chemical_Compound
+7679,26908,MoA,Phase 2,Gene,Chemical_Compound
+2714,26908,MoA,Phase 2,Gene,Chemical_Compound
+6599,26908,MoA,Phase 2,Gene,Chemical_Compound
+8584,26908,MoA,Phase 2,Gene,Chemical_Compound
+9324,26908,MoA,Phase 2,Gene,Chemical_Compound
+26922,26908,MoA,Phase 2,Gene,Chemical_Compound
+7333,26908,MoA,Phase 2,Gene,Chemical_Compound
+25660,26908,MoA,Phase 2,Gene,Chemical_Compound
+3557,26908,MoA,Phase 2,Gene,Chemical_Compound
+14664,26908,MoA,Phase 2,Gene,Chemical_Compound
+26923,26908,MoA,Phase 2,Gene,Chemical_Compound
+26924,26908,MoA,Phase 2,Gene,Chemical_Compound
+5503,26908,MoA,Phase 2,Gene,Chemical_Compound
+11761,26908,MoA,Phase 2,Gene,Chemical_Compound
+26925,26908,MoA,Phase 2,Gene,Chemical_Compound
+26926,26908,MoA,Phase 2,Gene,Chemical_Compound
+26927,26908,MoA,Phase 2,Gene,Chemical_Compound
+12611,26908,MoA,Phase 2,Gene,Chemical_Compound
+14430,26908,MoA,Phase 2,Gene,Chemical_Compound
+9557,26908,MoA,Phase 2,Gene,Chemical_Compound
+13152,26908,MoA,Phase 2,Gene,Chemical_Compound
+11666,26908,MoA,Phase 2,Gene,Chemical_Compound
+9139,26908,MoA,Phase 2,Gene,Chemical_Compound
+10336,26908,MoA,Phase 2,Gene,Chemical_Compound
+26928,26908,MoA,Phase 2,Gene,Chemical_Compound
+14986,26908,MoA,Phase 2,Gene,Chemical_Compound
+26929,26908,MoA,Phase 2,Gene,Chemical_Compound
+4018,26908,MoA,Phase 2,Gene,Chemical_Compound
+8994,26908,MoA,Phase 2,Gene,Chemical_Compound
+2689,26908,MoA,Phase 2,Gene,Chemical_Compound
+9421,26908,MoA,Phase 2,Gene,Chemical_Compound
+3412,26908,MoA,Phase 2,Gene,Chemical_Compound
+4085,26908,MoA,Phase 2,Gene,Chemical_Compound
+3679,26908,MoA,Phase 2,Gene,Chemical_Compound
+13210,26908,MoA,Phase 2,Gene,Chemical_Compound
+11300,26908,MoA,Phase 2,Gene,Chemical_Compound
+4336,26908,MoA,Phase 2,Gene,Chemical_Compound
+4335,26908,MoA,Phase 2,Gene,Chemical_Compound
+4337,26908,MoA,Phase 2,Gene,Chemical_Compound
+13211,26908,MoA,Phase 2,Gene,Chemical_Compound
+10795,26908,MoA,Phase 2,Gene,Chemical_Compound
+9617,26908,MoA,Phase 2,Gene,Chemical_Compound
+4331,26908,MoA,Phase 2,Gene,Chemical_Compound
+6791,26908,MoA,Phase 2,Gene,Chemical_Compound
+14994,26908,MoA,Phase 2,Gene,Chemical_Compound
+14713,26908,MoA,Phase 2,Gene,Chemical_Compound
+9845,26908,MoA,Phase 2,Gene,Chemical_Compound
+4745,26908,MoA,Phase 2,Gene,Chemical_Compound
+13007,26908,MoA,Phase 2,Gene,Chemical_Compound
+11396,26908,MoA,Phase 2,Gene,Chemical_Compound
+6133,26908,MoA,Phase 2,Gene,Chemical_Compound
+6041,26908,MoA,Phase 2,Gene,Chemical_Compound
+14468,26908,MoA,Phase 2,Gene,Chemical_Compound
+14165,26908,MoA,Phase 2,Gene,Chemical_Compound
+2777,26908,MoA,Phase 2,Gene,Chemical_Compound
+3424,26908,MoA,Phase 2,Gene,Chemical_Compound
+9326,26908,MoA,Phase 2,Gene,Chemical_Compound
+10004,26908,MoA,Phase 2,Gene,Chemical_Compound
+6957,26908,MoA,Phase 2,Gene,Chemical_Compound
+9951,26908,MoA,Phase 2,Gene,Chemical_Compound
+4041,26908,MoA,Phase 2,Gene,Chemical_Compound
+2623,26908,MoA,Phase 2,Gene,Chemical_Compound
+8808,26908,MoA,Phase 2,Gene,Chemical_Compound
+6636,26908,MoA,Phase 2,Gene,Chemical_Compound
+9844,26908,MoA,Phase 2,Gene,Chemical_Compound
+3376,26908,MoA,Phase 2,Gene,Chemical_Compound
+3335,26908,MoA,Phase 2,Gene,Chemical_Compound
+15426,26908,MoA,Phase 2,Gene,Chemical_Compound
+9168,26908,MoA,Phase 2,Gene,Chemical_Compound
+12863,26908,MoA,Phase 2,Gene,Chemical_Compound
+11314,26908,MoA,Phase 2,Gene,Chemical_Compound
+2830,26908,MoA,Phase 2,Gene,Chemical_Compound
+7736,26908,MoA,Phase 2,Gene,Chemical_Compound
+26930,26908,MoA,Phase 2,Gene,Chemical_Compound
+4088,26908,MoA,Phase 2,Gene,Chemical_Compound
+9428,26908,MoA,Phase 2,Gene,Chemical_Compound
+4533,26908,MoA,Phase 2,Gene,Chemical_Compound
+13869,26908,MoA,Phase 2,Gene,Chemical_Compound
+9410,26908,MoA,Phase 2,Gene,Chemical_Compound
+14433,26908,MoA,Phase 2,Gene,Chemical_Compound
+5976,26908,MoA,Phase 2,Gene,Chemical_Compound
+15168,26908,MoA,Phase 2,Gene,Chemical_Compound
+10837,26908,MoA,Phase 2,Gene,Chemical_Compound
+14697,26908,MoA,Phase 2,Gene,Chemical_Compound
+13824,26908,MoA,Phase 2,Gene,Chemical_Compound
+26931,26908,MoA,Phase 2,Gene,Chemical_Compound
+4061,26908,MoA,Phase 2,Gene,Chemical_Compound
+8647,26908,MoA,Phase 2,Gene,Chemical_Compound
+26932,26908,MoA,Phase 2,Gene,Chemical_Compound
+8687,26908,MoA,Phase 2,Gene,Chemical_Compound
+3218,26908,MoA,Phase 2,Gene,Chemical_Compound
+3436,26908,MoA,Phase 2,Gene,Chemical_Compound
+6943,26908,MoA,Phase 2,Gene,Chemical_Compound
+2762,26908,MoA,Phase 2,Gene,Chemical_Compound
+26053,26908,MoA,Phase 2,Gene,Chemical_Compound
+13133,26908,MoA,Phase 2,Gene,Chemical_Compound
+9146,26939,MoA,Phase 3,Gene,Chemical_Compound
+9994,26939,MoA,Phase 3,Gene,Chemical_Compound
+7634,26939,MoA,Phase 3,Gene,Chemical_Compound
+9277,26977,MoA,Launched,Gene,Chemical_Compound
+26978,26977,MoA,Launched,Gene,Chemical_Compound
+26979,26977,MoA,Launched,Gene,Chemical_Compound
+4739,26977,MoA,Launched,Gene,Chemical_Compound
+10660,26977,MoA,Launched,Gene,Chemical_Compound
+26980,26977,MoA,Launched,Gene,Chemical_Compound
+11455,26986,MoA,Phase 2,Gene,Chemical_Compound
+27017,27018,MoA,Preclinical,Gene,Chemical_Compound
+10978,27018,MoA,Preclinical,Gene,Chemical_Compound
+2925,27061,MoA,Phase 3,Gene,Chemical_Compound
+7591,27061,MoA,Phase 3,Gene,Chemical_Compound
+2789,27061,MoA,Phase 3,Gene,Chemical_Compound
+25647,27061,MoA,Phase 3,Gene,Chemical_Compound
+27062,27061,MoA,Phase 3,Gene,Chemical_Compound
+25596,27061,MoA,Phase 3,Gene,Chemical_Compound
+27063,27061,MoA,Phase 3,Gene,Chemical_Compound
+27064,27061,MoA,Phase 3,Gene,Chemical_Compound
+8346,27061,MoA,Phase 3,Gene,Chemical_Compound
+12203,27061,MoA,Phase 3,Gene,Chemical_Compound
+25655,27061,MoA,Phase 3,Gene,Chemical_Compound
+26412,27061,MoA,Phase 3,Gene,Chemical_Compound
+26109,27061,MoA,Phase 3,Gene,Chemical_Compound
+26775,27061,MoA,Phase 3,Gene,Chemical_Compound
+4909,27061,MoA,Phase 3,Gene,Chemical_Compound
+7992,27061,MoA,Phase 3,Gene,Chemical_Compound
+9075,27061,MoA,Phase 3,Gene,Chemical_Compound
+25629,27067,MoA,Preclinical,Gene,Chemical_Compound
+10608,27221,MoA,Preclinical,Gene,Chemical_Compound
+27274,27275,MoA,Phase 1,Gene,Chemical_Compound
+26071,27294,MoA,Preclinical,Gene,Chemical_Compound
+26109,27594,MoA,Preclinical,Gene,Chemical_Compound
+14006,27623,MoA,Preclinical,Gene,Chemical_Compound
+14278,27623,MoA,Preclinical,Gene,Chemical_Compound
+7886,27623,MoA,Preclinical,Gene,Chemical_Compound
+14371,27623,MoA,Preclinical,Gene,Chemical_Compound
+7024,27623,MoA,Preclinical,Gene,Chemical_Compound
+15665,27623,MoA,Preclinical,Gene,Chemical_Compound
+8585,27623,MoA,Preclinical,Gene,Chemical_Compound
+26332,27623,MoA,Preclinical,Gene,Chemical_Compound
+3311,27623,MoA,Preclinical,Gene,Chemical_Compound
+11857,27623,MoA,Preclinical,Gene,Chemical_Compound
+27624,27623,MoA,Preclinical,Gene,Chemical_Compound
+3570,27623,MoA,Preclinical,Gene,Chemical_Compound
+10029,27623,MoA,Preclinical,Gene,Chemical_Compound
+6695,27623,MoA,Preclinical,Gene,Chemical_Compound
+6054,27623,MoA,Preclinical,Gene,Chemical_Compound
+26848,27623,MoA,Preclinical,Gene,Chemical_Compound
+9285,27623,MoA,Preclinical,Gene,Chemical_Compound
+7020,27623,MoA,Preclinical,Gene,Chemical_Compound
+7633,27623,MoA,Preclinical,Gene,Chemical_Compound
+26412,27623,MoA,Preclinical,Gene,Chemical_Compound
+6965,27623,MoA,Preclinical,Gene,Chemical_Compound
+15168,27623,MoA,Preclinical,Gene,Chemical_Compound
+9945,27623,MoA,Preclinical,Gene,Chemical_Compound
+8235,27623,MoA,Preclinical,Gene,Chemical_Compound
+25803,27623,MoA,Preclinical,Gene,Chemical_Compound
+27700,27701,MoA,Preclinical,Gene,Chemical_Compound
+27801,27802,MoA,Launched,Gene,Chemical_Compound
+10635,27913,MoA,Preclinical,Gene,Chemical_Compound
+10141,27967,MoA,Launched,Gene,Chemical_Compound
+2789,27979,MoA,Preclinical,Gene,Chemical_Compound
+2519,27979,MoA,Preclinical,Gene,Chemical_Compound
+11150,27979,MoA,Preclinical,Gene,Chemical_Compound
+4229,27979,MoA,Preclinical,Gene,Chemical_Compound
+26109,27979,MoA,Preclinical,Gene,Chemical_Compound
+27980,27979,MoA,Preclinical,Gene,Chemical_Compound
+26775,27979,MoA,Preclinical,Gene,Chemical_Compound
+4909,27979,MoA,Preclinical,Gene,Chemical_Compound
+25642,27979,MoA,Preclinical,Gene,Chemical_Compound
+14109,28153,MoA,Preclinical,Gene,Chemical_Compound
+6184,28288,MoA,Launched,Gene,Chemical_Compound
+28289,28288,MoA,Launched,Gene,Chemical_Compound
+2925,28288,MoA,Launched,Gene,Chemical_Compound
+26183,28288,MoA,Launched,Gene,Chemical_Compound
+26185,28288,MoA,Launched,Gene,Chemical_Compound
+26194,28288,MoA,Launched,Gene,Chemical_Compound
+28290,28288,MoA,Launched,Gene,Chemical_Compound
+5063,28288,MoA,Launched,Gene,Chemical_Compound
+28291,28288,MoA,Launched,Gene,Chemical_Compound
+15049,28288,MoA,Launched,Gene,Chemical_Compound
+11680,28288,MoA,Launched,Gene,Chemical_Compound
+5906,28288,MoA,Launched,Gene,Chemical_Compound
+8124,28288,MoA,Launched,Gene,Chemical_Compound
+8510,28288,MoA,Launched,Gene,Chemical_Compound
+11401,28295,MoA,Phase 3,Gene,Chemical_Compound
+28296,28295,MoA,Phase 3,Gene,Chemical_Compound
+9423,28295,MoA,Phase 3,Gene,Chemical_Compound
+15014,28295,MoA,Phase 3,Gene,Chemical_Compound
+3618,28295,MoA,Phase 3,Gene,Chemical_Compound
+28297,28295,MoA,Phase 3,Gene,Chemical_Compound
+5731,28314,MoA,Launched,Gene,Chemical_Compound
+15001,28314,MoA,Launched,Gene,Chemical_Compound
+25664,28314,MoA,Launched,Gene,Chemical_Compound
+28315,28314,MoA,Launched,Gene,Chemical_Compound
+7521,28335,MoA,Phase 3,Gene,Chemical_Compound
+4898,28335,MoA,Phase 3,Gene,Chemical_Compound
+13137,28335,MoA,Phase 3,Gene,Chemical_Compound
+2607,28335,MoA,Phase 3,Gene,Chemical_Compound
+7226,28335,MoA,Phase 3,Gene,Chemical_Compound
+28336,28335,MoA,Phase 3,Gene,Chemical_Compound
+4091,28352,MoA,Phase 2,Gene,Chemical_Compound
+12792,28352,MoA,Phase 2,Gene,Chemical_Compound
+5605,28352,MoA,Phase 2,Gene,Chemical_Compound
+12222,28473,MoA,Preclinical,Gene,Chemical_Compound
+25899,28577,MoA,Launched,Gene,Chemical_Compound
+28316,28598,MoA,Phase 3,Gene,Chemical_Compound
+2925,28598,MoA,Phase 3,Gene,Chemical_Compound
+26183,28598,MoA,Phase 3,Gene,Chemical_Compound
+26185,28598,MoA,Phase 3,Gene,Chemical_Compound
+4400,28598,MoA,Phase 3,Gene,Chemical_Compound
+10062,28598,MoA,Phase 3,Gene,Chemical_Compound
+7521,28598,MoA,Phase 3,Gene,Chemical_Compound
+4898,28598,MoA,Phase 3,Gene,Chemical_Compound
+28310,28598,MoA,Phase 3,Gene,Chemical_Compound
+27068,28598,MoA,Phase 3,Gene,Chemical_Compound
+28318,28598,MoA,Phase 3,Gene,Chemical_Compound
+14712,28598,MoA,Phase 3,Gene,Chemical_Compound
+13350,28598,MoA,Phase 3,Gene,Chemical_Compound
+26324,28598,MoA,Phase 3,Gene,Chemical_Compound
+28321,28598,MoA,Phase 3,Gene,Chemical_Compound
+28322,28598,MoA,Phase 3,Gene,Chemical_Compound
+28323,28598,MoA,Phase 3,Gene,Chemical_Compound
+28599,28598,MoA,Phase 3,Gene,Chemical_Compound
+6268,28598,MoA,Phase 3,Gene,Chemical_Compound
+26189,28598,MoA,Phase 3,Gene,Chemical_Compound
+13075,28598,MoA,Phase 3,Gene,Chemical_Compound
+14016,28598,MoA,Phase 3,Gene,Chemical_Compound
+28290,28598,MoA,Phase 3,Gene,Chemical_Compound
+5063,28598,MoA,Phase 3,Gene,Chemical_Compound
+28600,28598,MoA,Phase 3,Gene,Chemical_Compound
+12133,28598,MoA,Phase 3,Gene,Chemical_Compound
+28291,28598,MoA,Phase 3,Gene,Chemical_Compound
+6211,28598,MoA,Phase 3,Gene,Chemical_Compound
+15049,28598,MoA,Phase 3,Gene,Chemical_Compound
+2812,28598,MoA,Phase 3,Gene,Chemical_Compound
+15745,28598,MoA,Phase 3,Gene,Chemical_Compound
+7927,28598,MoA,Phase 3,Gene,Chemical_Compound
+11980,28598,MoA,Phase 3,Gene,Chemical_Compound
+11680,28598,MoA,Phase 3,Gene,Chemical_Compound
+11512,28598,MoA,Phase 3,Gene,Chemical_Compound
+28347,28598,MoA,Phase 3,Gene,Chemical_Compound
+9072,28598,MoA,Phase 3,Gene,Chemical_Compound
+11176,28598,MoA,Phase 3,Gene,Chemical_Compound
+12212,28598,MoA,Phase 3,Gene,Chemical_Compound
+25690,28598,MoA,Phase 3,Gene,Chemical_Compound
+5144,28598,MoA,Phase 3,Gene,Chemical_Compound
+28601,28598,MoA,Phase 3,Gene,Chemical_Compound
+9219,28598,MoA,Phase 3,Gene,Chemical_Compound
+5480,28598,MoA,Phase 3,Gene,Chemical_Compound
+15107,28598,MoA,Phase 3,Gene,Chemical_Compound
+6708,28598,MoA,Phase 3,Gene,Chemical_Compound
+26195,28598,MoA,Phase 3,Gene,Chemical_Compound
+13683,28598,MoA,Phase 3,Gene,Chemical_Compound
+10405,28598,MoA,Phase 3,Gene,Chemical_Compound
+10512,28598,MoA,Phase 3,Gene,Chemical_Compound
+2949,28598,MoA,Phase 3,Gene,Chemical_Compound
+28333,28598,MoA,Phase 3,Gene,Chemical_Compound
+5605,28598,MoA,Phase 3,Gene,Chemical_Compound
+14109,28653,MoA,Launched,Gene,Chemical_Compound
+28064,28666,MoA,Launched,Gene,Chemical_Compound
+11461,28682,MoA,Launched,Gene,Chemical_Compound
+13680,28855,MoA,Phase 2/Phase 3,Gene,Chemical_Compound
+12630,28855,MoA,Phase 2/Phase 3,Gene,Chemical_Compound
+9594,28855,MoA,Phase 2/Phase 3,Gene,Chemical_Compound
+6579,28855,MoA,Phase 2/Phase 3,Gene,Chemical_Compound
+14441,28855,MoA,Phase 2/Phase 3,Gene,Chemical_Compound
+4614,28855,MoA,Phase 2/Phase 3,Gene,Chemical_Compound
+3513,28855,MoA,Phase 2/Phase 3,Gene,Chemical_Compound
+28856,28855,MoA,Phase 2/Phase 3,Gene,Chemical_Compound
+25518,28862,MoA,Preclinical,Gene,Chemical_Compound
+25519,28862,MoA,Preclinical,Gene,Chemical_Compound
+25520,28862,MoA,Preclinical,Gene,Chemical_Compound
+25983,28862,MoA,Preclinical,Gene,Chemical_Compound
+25525,28862,MoA,Preclinical,Gene,Chemical_Compound
+25526,28862,MoA,Preclinical,Gene,Chemical_Compound
+15875,28882,MoA,Phase 1,Gene,Chemical_Compound
+3818,28882,MoA,Phase 1,Gene,Chemical_Compound
+6054,28989,MoA,Phase 3,Gene,Chemical_Compound
+7829,29047,MoA,Preclinical,Gene,Chemical_Compound
+2942,29114,MoA,Phase 2,Gene,Chemical_Compound
+7555,29176,MoA,Phase 3,Gene,Chemical_Compound
+25647,29176,MoA,Phase 3,Gene,Chemical_Compound
+26652,29176,MoA,Phase 3,Gene,Chemical_Compound
+26653,29176,MoA,Phase 3,Gene,Chemical_Compound
+28333,29398,MoA,Phase 2,Gene,Chemical_Compound
+28706,29398,MoA,Phase 2,Gene,Chemical_Compound
+6757,29398,MoA,Phase 2,Gene,Chemical_Compound
+5037,29398,MoA,Phase 2,Gene,Chemical_Compound
+6859,29482,MoA,Preclinical,Gene,Chemical_Compound
+4229,29619,MoA,Phase 1,Gene,Chemical_Compound
+15354,29621,MoA,Preclinical,Gene,Chemical_Compound
+6730,29625,MoA,Launched,Gene,Chemical_Compound
+2942,29625,MoA,Launched,Gene,Chemical_Compound
+11857,29625,MoA,Launched,Gene,Chemical_Compound
+29626,29625,MoA,Launched,Gene,Chemical_Compound
+29627,29625,MoA,Launched,Gene,Chemical_Compound
+3679,29625,MoA,Launched,Gene,Chemical_Compound
+26412,29625,MoA,Launched,Gene,Chemical_Compound
+11512,29625,MoA,Launched,Gene,Chemical_Compound
+9945,29625,MoA,Launched,Gene,Chemical_Compound
+14817,29625,MoA,Launched,Gene,Chemical_Compound
+12703,29625,MoA,Launched,Gene,Chemical_Compound
+2835,29625,MoA,Launched,Gene,Chemical_Compound
+4757,29625,MoA,Launched,Gene,Chemical_Compound
+6901,29734,MoA,Phase 1,Gene,Chemical_Compound
+4522,29734,MoA,Phase 1,Gene,Chemical_Compound
+25544,29937,MoA,Preclinical,Gene,Chemical_Compound
+25518,29937,MoA,Preclinical,Gene,Chemical_Compound
+25722,29938,MoA,Preclinical,Gene,Chemical_Compound
+27357,29944,MoA,Launched,Gene,Chemical_Compound
+25646,29967,MoA,Preclinical,Gene,Chemical_Compound
+25648,29967,MoA,Preclinical,Gene,Chemical_Compound
+26652,29967,MoA,Preclinical,Gene,Chemical_Compound
+26653,29967,MoA,Preclinical,Gene,Chemical_Compound
+26582,29967,MoA,Preclinical,Gene,Chemical_Compound
+25623,29967,MoA,Preclinical,Gene,Chemical_Compound
+11142,29967,MoA,Preclinical,Gene,Chemical_Compound
+26048,29967,MoA,Preclinical,Gene,Chemical_Compound
+15745,29967,MoA,Preclinical,Gene,Chemical_Compound
+3034,29967,MoA,Preclinical,Gene,Chemical_Compound
+5354,29967,MoA,Preclinical,Gene,Chemical_Compound
+10825,29967,MoA,Preclinical,Gene,Chemical_Compound
+27641,29967,MoA,Preclinical,Gene,Chemical_Compound
+26916,30010,MoA,Launched,Gene,Chemical_Compound
+5008,30010,MoA,Launched,Gene,Chemical_Compound
+13791,30010,MoA,Launched,Gene,Chemical_Compound
+30011,30010,MoA,Launched,Gene,Chemical_Compound
+9652,30010,MoA,Launched,Gene,Chemical_Compound
+30012,30010,MoA,Launched,Gene,Chemical_Compound
+14975,30010,MoA,Launched,Gene,Chemical_Compound
+8094,30010,MoA,Launched,Gene,Chemical_Compound
+7185,30010,MoA,Launched,Gene,Chemical_Compound
+6651,30010,MoA,Launched,Gene,Chemical_Compound
+7415,30010,MoA,Launched,Gene,Chemical_Compound
+7641,30010,MoA,Launched,Gene,Chemical_Compound
+9683,30010,MoA,Launched,Gene,Chemical_Compound
+15004,30010,MoA,Launched,Gene,Chemical_Compound
+15459,30010,MoA,Launched,Gene,Chemical_Compound
+2549,30010,MoA,Launched,Gene,Chemical_Compound
+16038,30010,MoA,Launched,Gene,Chemical_Compound
+30013,30010,MoA,Launched,Gene,Chemical_Compound
+30014,30010,MoA,Launched,Gene,Chemical_Compound
+5812,30010,MoA,Launched,Gene,Chemical_Compound
+13248,30010,MoA,Launched,Gene,Chemical_Compound
+2884,30010,MoA,Launched,Gene,Chemical_Compound
+7687,30010,MoA,Launched,Gene,Chemical_Compound
+8780,30010,MoA,Launched,Gene,Chemical_Compound
+30015,30010,MoA,Launched,Gene,Chemical_Compound
+14997,30010,MoA,Launched,Gene,Chemical_Compound
+28392,30021,MoA,Launched,Gene,Chemical_Compound
+9935,30021,MoA,Launched,Gene,Chemical_Compound
+30022,30021,MoA,Launched,Gene,Chemical_Compound
+26071,30021,MoA,Launched,Gene,Chemical_Compound
+27666,30206,MoA,Launched,Gene,Chemical_Compound
+8955,30362,MoA,Launched,Gene,Chemical_Compound
+15820,30362,MoA,Launched,Gene,Chemical_Compound
+15486,30362,MoA,Launched,Gene,Chemical_Compound
+15973,30362,MoA,Launched,Gene,Chemical_Compound
+29342,30362,MoA,Launched,Gene,Chemical_Compound
+11857,30431,MoA,Launched,Gene,Chemical_Compound
+4313,30431,MoA,Launched,Gene,Chemical_Compound
+12212,30437,MoA,Phase 3,Gene,Chemical_Compound
+2925,30465,MoA,Preclinical,Gene,Chemical_Compound
+26916,30465,MoA,Preclinical,Gene,Chemical_Compound
+2742,30675,MoA,Phase 2,Gene,Chemical_Compound
+30291,30675,MoA,Phase 2,Gene,Chemical_Compound
+8143,30690,MoA,Phase 2,Gene,Chemical_Compound
+26607,30690,MoA,Phase 2,Gene,Chemical_Compound
+26608,30690,MoA,Phase 2,Gene,Chemical_Compound
+26609,30690,MoA,Phase 2,Gene,Chemical_Compound
+26610,30690,MoA,Phase 2,Gene,Chemical_Compound
+26611,30690,MoA,Phase 2,Gene,Chemical_Compound
+9579,30690,MoA,Phase 2,Gene,Chemical_Compound
+26612,30690,MoA,Phase 2,Gene,Chemical_Compound
+26613,30690,MoA,Phase 2,Gene,Chemical_Compound
+26614,30690,MoA,Phase 2,Gene,Chemical_Compound
+26615,30690,MoA,Phase 2,Gene,Chemical_Compound
+26616,30690,MoA,Phase 2,Gene,Chemical_Compound
+26617,30690,MoA,Phase 2,Gene,Chemical_Compound
+26618,30690,MoA,Phase 2,Gene,Chemical_Compound
+5740,30690,MoA,Phase 2,Gene,Chemical_Compound
+26619,30690,MoA,Phase 2,Gene,Chemical_Compound
+26620,30690,MoA,Phase 2,Gene,Chemical_Compound
+26621,30690,MoA,Phase 2,Gene,Chemical_Compound
+26622,30690,MoA,Phase 2,Gene,Chemical_Compound
+26623,30690,MoA,Phase 2,Gene,Chemical_Compound
+26624,30690,MoA,Phase 2,Gene,Chemical_Compound
+27801,30716,MoA,Phase 1,Gene,Chemical_Compound
+30724,30725,MoA,Preclinical,Gene,Chemical_Compound
+14600,30740,MoA,Preclinical,Gene,Chemical_Compound
+30741,30740,MoA,Preclinical,Gene,Chemical_Compound
+26318,30740,MoA,Preclinical,Gene,Chemical_Compound
+3491,30750,MoA,Preclinical,Gene,Chemical_Compound
+3265,30750,MoA,Preclinical,Gene,Chemical_Compound
+30751,30750,MoA,Preclinical,Gene,Chemical_Compound
+30752,30750,MoA,Preclinical,Gene,Chemical_Compound
+7351,30768,MoA,Preclinical,Gene,Chemical_Compound
+27292,30781,MoA,Preclinical,Gene,Chemical_Compound
+27351,30804,MoA,Preclinical,Gene,Chemical_Compound
+27588,30804,MoA,Preclinical,Gene,Chemical_Compound

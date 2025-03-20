@@ -1,0 +1,3 @@
+FromID,ToID,Relation_type,FromType,ToType
+7351,21068,GWAS_catalog,Gene,SNP
+7351,21071,GWAS_catalog,Gene,SNP
